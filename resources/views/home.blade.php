@@ -50,18 +50,16 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Profil Desa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Infografis</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Peta Desa</a>
               </li>
             </ul>
       
-            <!-- Tombol search di pojok kanan -->
-            <form class="d-flex ms-auto">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
@@ -180,6 +178,7 @@
     </div>
 </div>
 
+<h3>Peta Desa Penjajap</h3>
 <div class="map-container">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
     width="350" 
@@ -194,7 +193,7 @@
 <style>
 .map-container iframe {
     width: 100%;
-    height: 300px;
+    height: 400px;
     border: none;
 }
 
