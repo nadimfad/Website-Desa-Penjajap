@@ -17,12 +17,22 @@
             border: 1px solid #ddd;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px #0000001a;
         }
         .carousel-item img {
             height: 400px;
             object-fit: cover;
         }
+        .navbar-transparent {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparan */
+  transition: background-color 0.3s ease; /* Animasi transisi */
+}
+
+.navbar-solid {
+  background-color: rgba(255, 255, 255, 1); /* Warna solid */
+  transition: background-color 0.3s ease; /* Animasi transisi */
+}
+
     </style>
 </head>
 <body>
@@ -47,19 +57,34 @@
             <!-- Merapikan navbar ke tengah -->
             <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Profil Desa</a>
+                <a class="nav-link" href="/profil-desa">Profil Desa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Infografis</a>
+                <a class="nav-link" href="/infografis">Infografis</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Peta Desa</a>
+                <a class="nav-link" href="/peta-desa">Peta Desa</a>
               </li>
             </ul>
-      
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  const navbar = document.querySelector(".navbar");
+              
+                  window.addEventListener("scroll", function () {
+                    if (window.scrollY > 50) { // Jika halaman digulir lebih dari 50px
+                      navbar.classList.remove("navbar-light", "bg-light");
+                      navbar.classList.add("navbar-transparent");
+                    } else {
+                      navbar.classList.remove("navbar-transparent");
+                      navbar.classList.add("navbar-light", "bg-light");
+                    }
+                  });
+                });
+              </script>
+              
           </div>
         </div>
       </nav>
