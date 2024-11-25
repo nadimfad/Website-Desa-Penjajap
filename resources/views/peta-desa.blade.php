@@ -19,7 +19,7 @@
         }
 
         .navbar-solid {
-            background-color: rgba(255, 255, 255, 1); /* Warna solid */
+            background-color: rgba(255, 255, 255, 1); /* Warna 5 solid */
             transition: background-color 0.3s ease; /* Animasi transisi */
         }
         .navbar-nav .nav-item {
