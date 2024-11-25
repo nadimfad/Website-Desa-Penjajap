@@ -35,17 +35,17 @@
 
     </style>
 </head>
-<body>
+<>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
           <!-- Foto di kiri dan teks di samping -->
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4thiZ_5NA1sgROsPdnfDQvmu7UQrNpmEagw&s" 
-              alt="Logo" style="width: 80px; height: 70px; object-fit: cover; margin-right: 10px;">
+          <a class="navbar-brand d-flex align-items-" href="/">
+            <img src="{{ asset('image/logo sambas.png') }}" alt="logo" 
+              alt="Logo" style="width: 80px; height: 75px; object-fit: cover; margin-right: 10px;">
             <div>
-              <h3 class="m-0" style="font-size: 16px; font-weight: bold;">Desa Penjajap</h3>
-              <h4 class="m-0" style="font-size: 13px;">Kabupaten Sambas</h4>
+              <h1 class="m-2" style="font-size: 18px; font-weight: bold;">Desa Penjajap</h1>
+              <h4 class="m-2" style="font-size: 13px;">Kabupaten Sambas</h4>
             </div>
           </a>
       
@@ -55,7 +55,7 @@
       
           <div class="collapse navbar-collapse" id="navbarScroll">
             <!-- Merapikan navbar ke tengah -->
-            <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
@@ -69,29 +69,15 @@
                 <a class="nav-link" href="/peta-desa">Peta Desa</a>
               </li>
             </ul>
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                  const navbar = document.querySelector(".navbar");
-              
-                  window.addEventListener("scroll", function () {
-                    if (window.scrollY > 50) { // Jika halaman digulir lebih dari 50px
-                      navbar.classList.remove("navbar-light", "bg-light");
-                      navbar.classList.add("navbar-transparent");
-                    } else {
-                      navbar.classList.remove("navbar-transparent");
-                      navbar.classList.add("navbar-light", "bg-light");
-                    }
-                  });
-                });
-              </script>
-              
+          
           </div>
         </div>
       </nav>
       
       <!-- Menambahkan padding-top yang lebih besar agar konten tidak tertutup -->
       <div class="container mt-5 pt-5" style="padding-top: 120px;">
-        <h1 class="text-center mb-4">Welcome to My Simple Laravel Website</h1>
+        <h2 class="text-center mb-4">Selamat Datang di Website Desa Penjajap</h2>
+        <h3 class="text-center mb-4">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</h3>
         <!-- Konten lainnya di sini -->
       </div>
       
@@ -162,8 +148,53 @@
 </style>
 
 
+<!-- Main Content -->
+<div class="container mt-5">
+  <div class="row align-items-center">
+      <div class="col-md-4 text-center">
+          <img src="{{ asset('image/logo sambas.png') }}" alt="logo"  alt="Logo Kabupaten" class="img-fluid rounded-circle shadow">
+      </div>
+      <div class="col-md-8">
+          <h1 class="text-danger mb-4">Sambutan Kepala Desa</h1>
+          <h2 class="mb-3">JUMADI</h2>
+          <h5 class="text-muted mb-4">Kepala Desa Kersik</h5>
+          
+          <p class="mb-4">Assalamu Alaikum Warohmatullahi Wabarakatu.</p>
+          
+          <p class="mb-4">Website ini hadir sebagai wujud transformasi desa Kersik menjadi desa yang 
+          mampu memanfaatkan teknologi informasi dan komunikasi, terintegrasi kedalam sistem online. 
+          Keterbukaan informasi publik, pelayanan publik dan kegiatan perekonomian di desa, 
+          guna mewujudkan desa Kersik sebagai desa wisata yang berkelanjutan, adaptasi dan 
+          mitigasi terhadap perubahan iklim serta menjadi desa yang mandiri.</p>
+          
+          <p>Terima kasih kepada semua pihak yang telah banyak memberi dukungan</p>
+          
+          <a href="#" class="text-danger">Selengkapnya</a>
+      </div>
+  </div>
+</div>
+
+<!-- Visitor Counter -->
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-6">
+          <div class="bg-light rounded p-3 d-inline-block">
+              <h6 class="mb-0">Kunjungan</h6>
+              <p class="mb-0">564 Hari Ini</p>
+          </div>
+      </div>
+      <div class="col-6 text-end">
+          <button class="btn btn-primary">
+              <i class="bi bi-headset"></i> Pengaduan
+          </button>
+      </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <!-- Card Section -->
-    <h2>SOTK</h2>
+<h2>SOTK</h2>
 <h4>Struktur Organisasi dan Tata Kerja Desa Penjajap</h4>
 
 <div class="container mt-4">
@@ -228,5 +259,21 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) { // Jika halaman digulir lebih dari 50px
+        navbar.classList.remove("navbar-light", "bg-light");
+        navbar.classList.add("navbar-transparent");
+      } else {
+        navbar.classList.remove("navbar-transparent");
+        navbar.classList.add("navbar-light", "bg-light");
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
