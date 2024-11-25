@@ -38,7 +38,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('banner', BannerController::class);
 });
 
-// // Route untuk CRUD Galeri Desa
+// // Route untuk CRUD Gallery Desa
 // Route::prefix('admin')->name('admin.')->group(function () {
-//     Route::resource('galeri', GaleriDesaController::class);
+//     Route::resource('village-gallery', VillageGalleryController::class);
 // });
+
