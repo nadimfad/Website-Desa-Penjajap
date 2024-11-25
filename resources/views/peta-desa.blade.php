@@ -124,7 +124,7 @@
 </head>
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container-fluid">
-      <!-- Foto di kiri dan teks di samping -->
+      <!-- Foto di kiri dan teks di samping kanan -->
       <a class="navbar-brand d-flex align-items-" href="/">
         <img src="{{ asset('image/logo sambas.png') }}" alt="logo" 
           alt="Logo" style="width: 80px; height: 75px; object-fit: cover; margin-right: 10px;">
