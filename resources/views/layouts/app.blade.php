@@ -13,7 +13,7 @@
             <div class="col-md-3 bg-dark text-white p-3" style="height: 100vh;">
                 <h4>Admin Panel</h4>
                 <ul class="nav flex-column">
-                        <a class="nav-link text-white" href="{{ route('admin.dashboard') }}">Home</a>
+                        <a class="nav-link text-white" href="{{ route('admin.home') }}">Home</a>
                         {{-- <a class="nav-link text-white" href="{{ route('admin.village-gallery.index') }}">Village Gallery</a> --}}
                     </li>
                     <li class="nav-item">

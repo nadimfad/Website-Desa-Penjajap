@@ -12,7 +12,7 @@ Route::view( '/infografis', 'infografis');
 Route::view( '/peta-desa', 'peta-desa');
 
 use App\Http\Controllers\AdminHomeController;
-use App\Http\Controllers\AdminProfileController;
+// use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Admin\InfographicController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\EmployeeController;
