@@ -12,27 +12,16 @@ class AdminHomeController extends Controller
     }
     public function profile()
     {
-    return view('admin.profile');
+        return view('admin.profile');
     }
 
-    public function pengumuman()
+    public function infographics()
     {
-    return view('admin.pengumuman');
+        return view('admin.infographics');
     }
 
-    public function kegiatan()
+    public function map()
     {
-    return view('admin.kegiatan');
+        return view('admin.map');
     }
-
-    public function contact()
-    {
-    return view('admin.kontak');
-    }
-
-    public function pengguna()
-    {
-    return view('admin.pengguna');
-    }
-
 }
