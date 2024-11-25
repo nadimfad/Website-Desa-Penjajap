@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\InfographicController;
+use App\Http\Controllers\Admin\BannerController;
 
 // Route untuk halaman utama
 Route::get('/', [HomeController::class, 'index']);
@@ -25,3 +27,18 @@ Route::delete('/admin/employees/{employee}', [EmployeeController::class, 'destro
 Route::get('/admin/profile', [ProfileController::class, 'index'])->name('admin.profile');
 Route::post('/admin/profile', [ProfileController::class, 'store'])->name('admin.profile.store');
 Route::put('/admin/profile/{profile}', [ProfileController::class, 'update'])->name('admin.profile.update');
+
+// Route untuk CRUD Infografis
+Route::get('/admin/infographic',[InfographicController::class,'index'])->name('admin.infographic');
+Route::post('/admin/infographic', [InfographicController::class, 'store'])->name('admin.infographic.store');
+Route::put('/admin/infographic/{infographic}', [InfographicController::class, 'update'])->name('admin.infographic.update');
+
+// Route untuk CRUD banner di dashboard
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('banner', BannerController::class);
+});
+
+// // Route untuk CRUD Galeri Desa
+// Route::prefix('admin')->name('admin.')->group(function () {
+//     Route::resource('galeri', GaleriDesaController::class);
+// });
