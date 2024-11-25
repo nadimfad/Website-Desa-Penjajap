@@ -23,20 +23,137 @@
             height: 400px;
             object-fit: cover;
         }
-        .navbar-transparent {
-  background-color: rgba(255, 255, 255, 0.5); /* Transparan */
-  transition: background-color 0.3s ease; /* Animasi transisi */
-}
+        .carousel-item {
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        .carousel-caption h2 {
+           font-size: 2rem;
+        }
 
-.navbar-solid {
-  background-color: rgba(255, 255, 255, 1); /* Warna solid */
-  transition: background-color 0.3s ease; /* Animasi transisi */
-}
+        .carousel-caption p {
+          font-size: 1.2rem;
+        }
+        .navbar-transparent {
+            background-color: rgba(255, 255, 255, 0.5); /* Transparan */
+            transition: background-color 0.3s ease; /* Animasi transisi */
+        }
+
+        .navbar-solid {
+            background-color: rgba(255, 255, 255, 1); /* Warna solid */
+            transition: background-color 0.3s ease; /* Animasi transisi */
+        }
+        .navbar-nav .nav-item {
+            margin-right: 15px; /* Memberikan jarak antar item */
+        }
+        .navbar-nav .nav-item:last-child {
+            margin-right: 0; /* Menghilangkan margin pada item terakhir */
+        }
+        .gallery-item {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #dc3545;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        footer {
+            margin-top: 30px; /* Menambahkan ruang di atas footer */
+        }
+
+        .footer-container {
+            background: linear-gradient(to right, #f02b2b, #ff6b6b);
+            padding: 2rem;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            width: 250px;
+            height: auto;
+        }
+
+        .contact-info, .phone-numbers, .links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        } 
+
 
     </style>
 </head>
-<>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
           <!-- Foto di kiri dan teks di samping -->
@@ -122,37 +239,13 @@
     </a>
 </div>
 
-<style>
-.carousel-item {
-    position: relative;
-    font-family: Arial, sans-serif;
-}
-
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    text-align: center;
-}
-
-.carousel-caption h2 {
-    font-size: 2rem;
-}
-
-.carousel-caption p {
-    font-size: 1.2rem;
-}
-</style>
-
-
 <!-- Main Content -->
 <div class="container mt-5">
   <div class="row align-items-center">
       <div class="col-md-4 text-center">
-          <img src="{{ asset('image/logo sambas.png') }}" alt="logo"  alt="Logo Kabupaten" class="img-fluid rounded-circle shadow">
+        <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Kabupaten" style="width: 380px; height: 200px;">
+
+
       </div>
       <div class="col-md-8">
           <h1 class="text-danger mb-4">Sambutan Kepala Desa</h1>
@@ -169,32 +262,17 @@
           
           <p>Terima kasih kepada semua pihak yang telah banyak memberi dukungan</p>
           
-          <a href="#" class="text-danger">Selengkapnya</a>
+       
       </div>
   </div>
 </div>
 
-<!-- Visitor Counter -->
-<div class="container mt-5">
-  <div class="row">
-      <div class="col-6">
-          <div class="bg-light rounded p-3 d-inline-block">
-              <h6 class="mb-0">Kunjungan</h6>
-              <p class="mb-0">564 Hari Ini</p>
-          </div>
-      </div>
-      <div class="col-6 text-end">
-          <button class="btn btn-primary">
-              <i class="bi bi-headset"></i> Pengaduan
-          </button>
-      </div>
-  </div>
-</div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <!-- Card Section -->
-<h2>SOTK</h2>
+<h2 class="mt-5">SOTK</h2>
 <h4>Struktur Organisasi dan Tata Kerja Desa Penjajap</h4>
 
 <div class="container mt-4">
@@ -246,14 +324,124 @@
 </iframe>
 </div>
 
-<style>
-.map-container iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-}
+<div class="container py-5">
+  <div class="row">
+      <div class="col-12">
+          <h2 class="section-title">GALERI DESA</h2>
+          <p class="text-muted mb-4">Menampilkan kegiatan-kegiatan yang berlangsung di desa</p>
+      </div>
+  </div>
 
-</style>
+  <div class="row">
+      <!-- Gallery Item 1 -->
+      <div class="col-md-4 gallery-item">
+          <div class="card border-0 shadow-sm">
+              <img src="makan-bersama.jpg" class="gallery-img" alt="Kegiatan Makan Bersama">
+              <div class="card-body">
+                  <h5 class="card-title">Kegiatan Masyarakat</h5>
+                  <p class="card-text text-muted">Makan bersama dalam rangka gotong royong desa</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="col-md-4 gallery-item">
+          <div class="card border-0 shadow-sm">
+              <img src="pelatihan.jpg" class="gallery-img" alt="Pelatihan">
+              <div class="card-body">
+                  <h5 class="card-title">Pelatihan TNI</h5>
+                  <p class="card-text text-muted">Kegiatan pelatihan bersama TNI</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="col-md-4 gallery-item">
+          <div class="card border-0 shadow-sm">
+              <img src="olahraga.jpg" class="gallery-img" alt="Olahraga">
+              <div class="card-body">
+                  <h5 class="card-title">Kegiatan Olahraga</h5>
+                  <p class="card-text text-muted">Pertandingan olahraga antar warga</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="col-md-4 gallery-item">
+          <div class="card border-0 shadow-sm">
+              <img src="musrenbang.jpg" class="gallery-img" alt="Musrenbang">
+              <div class="card-body">
+                  <h5 class="card-title">Musrenbang Desa</h5>
+                  <p class="card-text text-muted">Musyawarah Perencanaan Pembangunan Desa</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Gallery Item 5 -->
+      <div class="col-md-4 gallery-item">
+          <div class="card border-0 shadow-sm">
+              <img src="pertemuan.jpg" class="gallery-img" alt="Pertemuan Warga">
+              <div class="card-body">
+                  <h5 class="card-title">Pertemuan Warga</h5>
+                  <p class="card-text text-muted">Pertemuan rutin warga desa</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Gallery Item 6 -->
+      <div class="col-md-4 gallery-item">
+          <div class="card border-0 shadow-sm">
+              <img src="kunjungan.jpg" class="gallery-img" alt="Kunjungan Tim">
+              <div class="card-body">
+                  <h5 class="card-title">Kunjungan Tim Juri</h5>
+                  <p class="card-text text-muted">Kunjungan tim penilai ke desa</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<footer class="footer-container">
+  <div class="footer-content">
+      <div class="footer-logo">
+          <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Desa Penjajap">
+          <h3>Desa Penjajap</h3>
+          <p>Kecamatan Pemangkat<br>
+          Kabupaten Sambas<br>
+          Provinsi Kalimantan Barat</p>
+      </div>
+      
+      <div class="contact-info">
+          <h4 class="footer-heading">Kontak Desa</h4>
+          <p>082150208664</p>
+          <p>kersik.marangkayu@kukarkab.go.i</p>
+          <p>Senin - Kamis (08.00 - 15.00) &<br>
+          Jum'at (08.00 - 11.00)</p>
+          <p>Jalan Langaseng Dusun Empang<br>
+          RT.003</p>
+      </div>
+
+      <div class="phone-numbers">
+          <h4 class="footer-heading">Nomor Telepon Penting</h4>
+          <p>Jumadi/Kades Kersik<br>
+          08124236847</p>
+          <p>Yayan/Ambulan Kersik<br>
+          085392095123</p>
+      </div>
+
+      <div class="links">
+          <h4 class="footer-heading">Jelajahi</h4>
+          <a href="#" style="color: white; text-decoration: none;">Website Kemendesa</a>
+          <a href="#" style="color: white; text-decoration: none;">Website Kemendagri</a>
+          <a href="#" style="color: white; text-decoration: none;">Website Kabupaten Kutai Kartanegara</a>
+          <a href="#" style="color: white; text-decoration: none;">Cek DPT Online</a>
+      </div>
+  </div>
+
+  <div class="copyright">
+      © 2024 Powered by PT Digital Desa Indonesia
+  </div>
+</footer>
 
 <!-- jQuery, Popper.js, Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
