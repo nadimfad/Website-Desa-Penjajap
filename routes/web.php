@@ -15,6 +15,9 @@ use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Admin\InfographicController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class, 'index']);
 
