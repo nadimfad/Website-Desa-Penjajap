@@ -1,36 +1,27 @@
-@extends('layouts.admin') <!-- Menggunakan Layout -->
-@section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('public/admin_asset/css/admin.css') }}">
-</head>
-<body>
-    <div class="admin-container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <h2>Admin Panel</h2>
-            </div>
-            <ul class="sidebar-menu">
-                <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
-                <li><a href="{{ route('admin.profile') }}">Profile Desa</a></li>
-                <li><a href="{{ route('admin.pengumuman') }}">Pengumuman</a></li>
-                <li><a href="{{ route('admin.kegiatan') }}">Kegiatan</a></li>
-                <li><a href="{{ route('admin.kontak') }}">Kontak</a></li>
-                <li><a href="{{ route('admin.pengguna') }}">Pengguna</a></li>
-            </ul>
-        </div>
+@extends('layouts.app')
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <h1>Welcome to the Admin Dashboard</h1>
-            <p>Manage your content from the sidebar.</p>
+@section('content')
+    <h1>Profile - Visi-Misi</h1>
+
+    <!-- Form untuk tambah atau edit visi-misi -->
+    <form action="{{ isset($profile) ? route('admin.profile.update', $profile) : route('admin.profile.store') }}" method="POST">
+        @csrf
+        @if(isset($profile))
+            @method('PUT')
+        @endif
+        <div class="mb-3">
+            <label for="visi_misi" class="form-label">Vision & Mission</label>
+            <textarea name="visi_misi" class="form-control" rows="5" required>{{ old('visi_misi', isset($profile) ? $profile->visi_misi : '') }}</textarea>
         </div>
-    </div>
-</body>
-</html>
+        <button type="submit" class="btn btn-primary">{{ isset($profile) ? 'Update' : 'Save' }}</button>
+    </form>
+
+    <hr>
+
+    <h2>Visi-Misi Ter-Update</h2>
+    @if(isset($profile))
+        <p>{{ $profile->visi_misi }}</p>
+    @else
+        <p>No Vision and Mission set yet.</p>
+    @endif
 @endsection
