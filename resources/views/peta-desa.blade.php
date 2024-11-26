@@ -19,7 +19,7 @@
         }
 
         .navbar-solid {
-            background-color: rgba(255, 255, 255, 1); /* Warna solid */
+            background-color: rgba(255, 255, 255, 1); /* Warna 5 solid */
             transition: background-color 0.3s ease; /* Animasi transisi */
         }
         .navbar-nav .nav-item {
@@ -124,7 +124,7 @@
 </head>
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container-fluid">
-      <!-- Foto di kiri dan teks di samping -->
+      <!-- Foto di kiri dan teks di samping kanan -->
       <a class="navbar-brand d-flex align-items-" href="/">
         <img src="{{ asset('image/logo sambas.png') }}" alt="logo" 
           alt="Logo" style="width: 80px; height: 75px; object-fit: cover; margin-right: 10px;">
@@ -139,10 +139,10 @@
       </button>
   
       <div class="collapse navbar-collapse" id="navbarScroll">
-        <!-- Merapikan navbar ke tengah -->
+        <!-- Merapikan navbar ke tengah 21-->
         <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/profil-desa">Profil Desa</a>
@@ -151,7 +151,7 @@
             <a class="nav-link" href="/infografis">Infografis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/peta-desa">Peta Desa</a>
+            <a class="nav-link active" href="/peta-desa">Peta Desa</a>
           </li>
         </ul>
       
