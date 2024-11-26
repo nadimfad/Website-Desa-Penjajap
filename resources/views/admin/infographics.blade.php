@@ -4,7 +4,7 @@
     <h1>Infographic - Jumlah Penduduk & Kepala Keluarga</h1>
 
     <!-- Form untuk tambah atau edit infografis -->
-    <form action="{{ isset($infographic) ? route('admin.infographic.update', $infographic) : route('admin.infographic.store') }}" method="POST">
+    <form action="{{ isset($infographic) ? route('admin.infographics.update', $infographic) : route('admin.infographics.store') }}" method="POST">
         @csrf
         @if(isset($infographic))
             @method('PUT')

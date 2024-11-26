@@ -11,7 +11,7 @@ class InfographicController extends Controller
     public function index()
     {
         $infographic = Infographic::first(); // Ambil data infografis pertama
-        return view('admin.infographic', compact('infographic'));
+        return view('admin.infographics', compact('infographic'));
     }
 
     public function store(Request $request)
@@ -26,7 +26,7 @@ class InfographicController extends Controller
             'households' => $request->households,
         ]);
 
-        return redirect()->route('admin.infographic');
+        return redirect()->route('admin.infographics');
     }
 
     public function update(Request $request, Infographic $infographic)
@@ -41,6 +41,6 @@ class InfographicController extends Controller
             'households' => $request->households,
         ]);
 
-        return redirect()->route('admin.infographic');
+        return redirect()->route('admin.infographics');
     }
 }

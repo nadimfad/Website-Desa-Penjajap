@@ -12,14 +12,15 @@ class AdminController extends Controller
     }
     public function profile()
     {
-    return view('admin.profile');
+        return view('admin.profile');
     }
     public function infographics()
     {
-    return view('admin.infographics');
+        return view('admin.infographics');
     }
+
     public function map()
     {
-    return view('admin.map');
+        return view('admin.map');
     }
 }

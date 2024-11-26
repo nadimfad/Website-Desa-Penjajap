@@ -1,60 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Employee Dashboard</h1>
+    <h1>Dashboard</h1>
 
-    <!-- Form untuk tambah data -->
-    <form action="{{ route('admin.employees.store') }}" method="POST" enctype="multipart/form-data">
+    <!-- Form untuk tambah atau edit visi-misi -->
+    <form action="{{ isset($profile) ? route('admin.profile.update', $profile) : route('admin.profile.store') }}" method="POST">
         @csrf
+        @if(isset($profile))
+            @method('PUT')
+        @endif
         <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" required>
+            <label for="visi_misi" class="form-label">Vision & Mission</label>
+            <textarea name="visi_misi" class="form-control" rows="5" required>{{ old('visi_misi', isset($profile) ? $profile->visi_misi : '') }}</textarea>
         </div>
-        <div class="mb-3">
-            <label for="position" class="form-label">Position</label>
-            <input type="text" name="position" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label for="photo" class="form-label">Photo (optional)</label>
-            <input type="file" name="photo" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">Add Employee</button>
+        <button type="submit" class="btn btn-primary">{{ isset($profile) ? 'Update' : 'Save' }}</button>
     </form>
 
-    <h2>Employee List</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Photo</th>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($employees as $employee)
-                <tr>
-                    <td>
-                        @if ($employee->photo)
-                            <img src="{{ Storage::url($employee->photo) }}" alt="photo" width="50">
-                        @else
-                            No photo
-                        @endif
-                    </td>
-                    <td>{{ $employee->name }}</td>
-                    <td>{{ $employee->position }}</td>
-                    <td>
-                        <!-- Edit Button -->
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#editModal{{ $employee->id }}">Edit</a>
-                        <!-- Delete Button -->
-                        <form action="{{ route('admin.employees.destroy', $employee) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <hr>
+
+    <h2>Visi-Misi Ter-Update</h2>
+    @if(isset($profile))
+        <p>{{ $profile->visi_misi }}</p>
+    @else
+        <p>No Vision and Mission set yet.</p>
+    @endif
 @endsection

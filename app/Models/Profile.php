@@ -9,5 +9,5 @@ class Profile extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['visi_misi'];
+    protected $fillable = ['visimisi'];
 }
