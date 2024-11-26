@@ -63,7 +63,7 @@
             height: auto;
         }
         .job-list {
-            max-height: 300px;
+            max-height: 500px;
             overflow-y: auto;
         }
         .navbar-nav .nav-item {
@@ -100,6 +100,15 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+        }
+
+        .pekerjaan h4 {
+            font-size: 12px;
+            font-weight: 600
+        }
+
+        .pekerjaan h2 {
+            font-size: 2.7rem;
         }
 
         .footer-logo img {
@@ -155,6 +164,12 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 1024px) {
+        .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -179,13 +194,13 @@
             <!-- Merapikan navbar ke tengah -->
             <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/profil-desa">Profil Desa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/infografis">Infografis</a>
+                <a class="nav-link active" href="/infografis">Infografis</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/peta-desa">Peta Desa</a>
@@ -349,17 +364,17 @@
         </div>
     </div>
 </div>    
-
+      </div>
   <!-- Main Content -->
-  <div class="container my-5">
+  <div class="container mt-5">
     <h2 class="mb-4">Berdasarkan Pekerjaan</h2>
-    <div class="row">
+    <div class="col d-flex">
         <div class="col-md-6">
             <div class="card mb-4">
-                <div class="card-body">
+                <div class="card-body ">
                     <h4 class="card-title">Jenis Pekerjaan</h4>
                     <div class="job-list">
-                        <table class="table table-borderless">
+                        <table class="table table-borderless" >
                             <tbody>
                                 <tr>
                                     <td>Pelajar/Mahasiswa</td>
@@ -395,7 +410,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="row row-cols-1 row-cols-md-2 g-4 pekerjaan">
+        <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
                     <h4 class="card-title">Pelajar/Mahasiswa</h4>
@@ -403,7 +419,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
                     <h4 class="card-title">Belum/Tidak Bekerja</h4>
@@ -411,9 +427,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
+        <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
                     <h4 class="card-title">Mengurus Rumah Tangga</h4>
@@ -421,7 +435,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
                     <h4 class="card-title">Karyawan Swasta</h4>
@@ -429,7 +443,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
                     <h4 class="card-title">Nelayan/Perikanan</h4>
@@ -437,7 +451,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
                     <h4 class="card-title">Petani/Pekebun</h4>
@@ -445,6 +459,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 

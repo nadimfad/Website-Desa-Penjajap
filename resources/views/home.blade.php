@@ -87,7 +87,7 @@
         }
         .map-container iframe {
             width: 100%;
-            height: 400px;
+            height: 450px;
             border: none;
         }
         footer {
@@ -193,8 +193,8 @@
       
       <!-- Menambahkan padding-top yang lebih besar agar konten tidak tertutup -->
       <div class="container mt-5 pt-5" style="padding-top: 120px;">
-        <h2 class="text-center mb-4">Selamat Datang di Website Desa Penjajap</h2>
-        <h3 class="text-center mb-4">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</h3>
+        <h2 class="text-center mb-2 mt-4">Selamat Datang di Website Desa Penjajap</h2>
+        <h3 class="text-center mb-3">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</h3>
         <!-- Konten lainnya di sini -->
       </div>
       
@@ -248,11 +248,11 @@
 
       </div>
       <div class="col-md-8">
-          <h1 class="text-danger mb-4">Sambutan Kepala Desa</h1>
-          <h2 class="mb-3">JUMADI</h2>
+          <h1 class="text-success mb-1">Sambutan Kepala Desa</h1>
+          <h2 class="mb-1">JUMADI</h2>
           <h5 class="text-muted mb-4">Kepala Desa Kersik</h5>
           
-          <p class="mb-4">Assalamu Alaikum Warohmatullahi Wabarakatu.</p>
+          <p class="mb-0">Assalamualaikum Warahmatullahi Wabarakatuh.</p>
           
           <p class="mb-4">Website ini hadir sebagai wujud transformasi desa Kersik menjadi desa yang 
           mampu memanfaatkan teknologi informasi dan komunikasi, terintegrasi kedalam sistem online. 
@@ -272,6 +272,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <!-- Card Section -->
+    
 <h2 class="mt-5">SOTK</h2>
 <h4>Struktur Organisasi dan Tata Kerja Desa Penjajap</h4>
 
@@ -312,7 +313,7 @@
     </div>
 </div>
 
-<h3>Peta Desa Penjajap</h3>
+<h3 class="mt-5">Peta Desa Penjajap</h3>
 <div class="map-container">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
     width="350" 

@@ -142,7 +142,7 @@
         <!-- Merapikan navbar ke tengah 21-->
         <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/profil-desa">Profil Desa</a>
@@ -151,7 +151,7 @@
             <a class="nav-link" href="/infografis">Infografis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/peta-desa">Peta Desa</a>
+            <a class="nav-link active" href="/peta-desa">Peta Desa</a>
           </li>
         </ul>
       
