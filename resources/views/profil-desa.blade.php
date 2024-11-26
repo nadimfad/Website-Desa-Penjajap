@@ -154,10 +154,10 @@
             <!-- Merapikan navbar ke tengah -->
             <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/profil-desa">Profil Desa</a>
+                <a class="nav-link active" href="/profil-desa">Profil Desa</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/infografis">Infografis</a>
@@ -206,7 +206,15 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Bagan Desa -->
+        <h1>Bagan Desa</h1>
+        <p>Bagan Struktur Desa Penjajap</p>
+        <img src="https://cdn.digitaldesa.com/uploads/profil/64.02.17.2005/common/f6f6d96a1cd6ee00b0df15c9ff8a2ae1.png" alt="" style="width: 100%; height: auto; padding:0px 50px; ">
+
+        <!-- STRUKTUR ORGANISASI BADAN PERMUSYAWARATAN DESA -->
+        <h2>STRUKTUR ORGANISASI BADAN PERMUSYAWARATAN DESA</h2>
+        <img src="https://cdn.digitaldesa.com/uploads/profil/64.02.17.2005/common/f3070a5e9163d61f162d16e39d50f4e4.jpg" alt="" style="width: 100%; height: auto; padding:10px 50px; ">
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           const navbar = document.querySelector(".navbar");
@@ -223,6 +231,8 @@
         });
       </script>
       
+    
+
 
     <!-- Footer -->
     <footer class="footer-container">
