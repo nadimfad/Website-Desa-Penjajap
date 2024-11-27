@@ -28,13 +28,13 @@ class EmployeeController extends Controller
             $photoPath = $request->file('photo')->store('public/photos');
         }
 
-        Employee::create([
+        $employee = Employee::create([
             'photo' => $photoPath,
             'name' => $request->name,
             'position' => $request->position,
         ]);
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.employee.index');
     }
 
     public function update(Request $request, Employee $employee)
@@ -46,7 +46,6 @@ class EmployeeController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
-            // Hapus foto lama jika ada
             if ($employee->photo) {
                 Storage::delete($employee->photo);
             }
@@ -61,17 +60,16 @@ class EmployeeController extends Controller
             'position' => $request->position,
         ]);
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.employee.index');
     }
 
     public function destroy(Employee $employee)
     {
-        // Hapus foto jika ada
         if ($employee->photo) {
             Storage::delete($employee->photo);
         }
         $employee->delete();
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.employee.index');
     }
 }

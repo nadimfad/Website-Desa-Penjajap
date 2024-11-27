@@ -13,9 +13,9 @@ return new class extends Migration
 {
     Schema::create('banners', function (Blueprint $table) {
         $table->id();
-        $table->string('photo')->nullable(); // Foto banner (path file)
-        $table->string('title', 200); // Judul banner
-        $table->string('description', 500); // Deskripsi banner
+        $table->string('title');  // Kolom untuk judul
+        $table->text('description');  // Kolom untuk deskripsi
+        $table->string('photo');  // Kolom untuk foto (path)
         $table->timestamps();
     });
 }

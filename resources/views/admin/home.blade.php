@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
     <h1>Profile - Visi-Misi</h1>
@@ -24,4 +24,4 @@
     @else
         <p>No Vision and Mission set yet.</p>
     @endif
-@endsection
+@endsection --}}

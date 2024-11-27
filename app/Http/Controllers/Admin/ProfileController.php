@@ -17,11 +17,11 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'visi-misi' => 'required|max:500',
+            'visi_misi'
         ]);
 
         Profile::create([
-            'visi-misi' => $request->visi_misi,
+            'visi_misi' => $request->visi_misi,
         ]);
 
         return redirect()->route('admin.profile');
@@ -30,11 +30,11 @@ class ProfileController extends Controller
     public function update(Request $request, Profile $profile)
     {
         $request->validate([
-            'visi-misi' => 'required|max:500',
+            'visi_misi'
         ]);
 
         $profile->update([
-            'visi-misi' => $request->visi_misi,
+            'visi_misi' => $request->visi_misi,
         ]);
 
         return redirect()->route('admin.profile');

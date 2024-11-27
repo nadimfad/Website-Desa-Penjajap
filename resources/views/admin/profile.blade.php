@@ -10,8 +10,8 @@
             @method('PUT')
         @endif
         <div class="mb-3">
-            <label for="visimisi" class="form-label">Vision & Mission</label>
-            <textarea name="visimisi" class="form-control" rows="5" required>{{ old('visimisi', isset($profile) ? $profile->visi_misi : '') }}</textarea>
+            <label for="visi_misi" class="form-label">Vision & Mission</label>
+            <textarea name="visi_misi" class="form-control" rows="5" required>{{ old('visi_misi', isset($profile) ? $profile->visi_misi : '') }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">{{ isset($profile) ? 'Update' : 'Save' }}</button>
     </form>
