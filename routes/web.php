@@ -1,9 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
 use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\PetaDesaController;
 
@@ -21,8 +19,6 @@ use App\Http\Controllers\Admin\ProfileController;
 // use App\Http\Controllers\admin\AdminController;
 
 Route::get('/', [HomeController::class, 'index']);
-
-// Route untuk halaman admin utama (dashboard)
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
 Route::get('/admin/infographics', [AdminController::class, 'infographics'])->name('admin.infographics');
@@ -48,17 +44,3 @@ Route::put('/admin/infographic/{infographic}', [InfographicController::class, 'u
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('banner', BannerController::class);
 });
-
-// // // Route untuk CRUD Gallery Desa
-// Route::prefix('admin')->name('admin.')->group(function () {
-//     Route::resource('village-gallery', VillageGalleryController::class);
-// });
-
-
-// Route::get('/admin', [AdminHomeController::class, 'admin'])->name('admin.home');
-// Route::get('/admin/profile', [AdminHomeController::class, 'profile'])->name('admin.profile');
-// Route::get('/admin/pengumuman', [AdminHomeController::class, 'pengumuman'])->name('admin.pengumuman');
-// Route::get('/admin/kegiatan', [AdminHomeController::class, 'kegiatan'])->name('admin.kegiatan');
-// Route::get('/admin/kontak', [AdminHomeController::class, 'kontak'])->name('admin.kontak');
-// Route::get('/admin/pengguna', [AdminHomeController::class, 'pengguna'])->name('admin.pengguna');
-
