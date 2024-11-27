@@ -28,13 +28,22 @@ Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.p
 Route::get('/admin/infographics', [AdminController::class, 'infographics'])->name('admin.infographics');
 Route::get('/admin/map', [AdminController::class, 'map'])->name('admin.map');
 
-// //Route untuk CRUD Pejabat
-// Route::get('/admin', [EmployeeController::class, 'index'])->name('admin.dashboard');
-// Route::post('/admin/employees', [EmployeeController::class, 'store'])->name('admin.employees.store');
-// Route::put('/admin/employees/{employee}', [EmployeeController::class, 'update'])->name('admin.employees.update');
-// Route::delete('/admin/employees/{employee}', [EmployeeController::class, 'destroy'])->name('admin.employees.destroy');
+//Route Dashboard Employee dan Gallery
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('employee', EmployeeController::class);
+    // Dashboard Routes
+    Route::get('/', [EmployeeController::class, 'index'])->name('dashboard');
+
+    // Employee Routes
+    Route::post('/employee/store', [EmployeeController::class, 'storeEmployee'])->name('employee.store');
+    Route::get('/employee/edit/{employee}', [EmployeeController::class, 'editEmployee'])->name('employee.edit');
+    Route::put('/employee/update/{employee}', [EmployeeController::class, 'updateEmployee'])->name('employee.update');
+    Route::delete('/employee/destroy/{employee}', [EmployeeController::class, 'destroyEmployee'])->name('employee.destroy');
+
+    // Gallery Routes
+    Route::post('/gallery/store', [EmployeeController::class, 'storeGallery'])->name('galleries.store');
+    Route::get('/gallery/edit/{gallery}', [EmployeeController::class, 'editGallery'])->name('galleries.edit');
+    Route::put('/gallery/update/{gallery}', [EmployeeController::class, 'updateGallery'])->name('galleries.update');
+    Route::delete('/gallery/destroy/{gallery}', [EmployeeController::class, 'destroyGallery'])->name('galleries.destroy');
 });
 
 
@@ -63,8 +72,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('banner', BannerController::class);
 });
-
-
 // // // Route untuk CRUD Gallery Desa
 // Route::prefix('admin')->name('admin.')->group(function () {
 //     Route::resource('village-gallery', VillageGalleryController::class);
