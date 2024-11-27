@@ -27,16 +27,18 @@ class ProfileController extends Controller
         return redirect()->route('admin.profile');
     }
 
-    public function update(Request $request, Profile $profile)
-    {
-        $request->validate([
-            'visi_misi'
-        ]);
+    public function update(Request $request, $id)
+{
+    $request->validate([
+        'visi_misi' => 'required|string|max:1000',
+    ]);
 
-        $profile->update([
-            'visi_misi' => $request->visi_misi,
-        ]);
+    $profile = Profile::findOrFail($id);
+    $profile->update([
+        'visi_misi' => $request->visi_misi,
+    ]);
 
-        return redirect()->route('admin.profile');
-    }
+    return redirect()->route('admin.profile')->with('success', 'Visi-Misi updated successfully!');
+}
+
 }

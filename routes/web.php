@@ -39,9 +39,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 // // Route untuk CRUD Profile
-Route::get('/admin/profile', [ProfileController::class, 'index'])->name('admin.profile');
-Route::post('/admin/profile', [ProfileController::class, 'store'])->name('admin.profile.store');
-Route::put('/admin/profile/{profile}', [ProfileController::class, 'update'])->name('admin.profile.update');
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('profile', [ProfileController::class, 'store'])->name('profile.store');
+    Route::put('profile/{profile}', [ProfileController::class, 'update'])->name('profile.update');
+});
 
 // // Route untuk CRUD Infografis
 // Route::get('/admin/infographics',[InfographicController::class,'index'])->name('admin.infographics');
@@ -52,6 +54,10 @@ Route::put('/admin/infographic/{infographic}', [InfographicController::class, 'u
 // Route::prefix('admin')->name('admin.')->group(function () {
 //     Route::resource('banner', BannerController::class);
 // });
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('banner', BannerController::class);
+});
+
 
 // // // Route untuk CRUD Gallery Desa
 // Route::prefix('admin')->name('admin.')->group(function () {
