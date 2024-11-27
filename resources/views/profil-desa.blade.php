@@ -176,8 +176,8 @@
             <div class="row">
                 <div class="col-md-4 d-flex flex-column align-items-center text-center">
                     <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Desa Kersik" class="main-logo mb-1">
-                    <h2 class="mb-3">DESA KERSIK</h2>
-                    <p class="text-muted fw-bold">Kecamatan Marang Kayu, Kabupaten Kutai Kartanegara, Provinsi Kalimantan Timur</p>
+                    <h2 class="mb-3">DESA PENJAJAP</h2>
+                    <p class="text-muted fw-bold">Kecamatan Pemangkat, Kabupaten Sambas, Provinsi Kalimantan Barat</p>
                     <div class="visitor-count d-inline-block"></div>
                 </div>
                 <div class="col-md-8">
