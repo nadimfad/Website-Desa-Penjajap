@@ -284,7 +284,7 @@
 
       </div>
       <div class="col-md-8">
-          <h1 class="font-weight-bold" style="color: #185519">Sambutan Kepala Desa</h1>
+          <h1 class="font-weight-bold" style="color: #347928">Sambutan Kepala Desa</h1>
           <h3 class="mb-1">JUMADI</h3>
           <h5 class="text-muted mb-4">Kepala Desa Kersik</h5>
           
@@ -309,7 +309,7 @@
 
     <!-- Card Section -->
     
-<p class="mt-5 mb-0" style="padding-top: 50px; margin-left:70px; font-size:35px; color:green; font-weight:bolder; ">SOTK</p>
+<p class="mt-5 mb-0" style="padding-top: 50px; margin-left:70px; font-size:35px; color:#347928; font-weight:bolder; ">SOTK</p>
 <p style="margin-left: 70px; font-size:22px;">Struktur Organisasi dan Tata Kerja Desa Penjajap</p>
 
 <div class="container mt-4">
@@ -349,7 +349,7 @@
     </div>
 </div>
 
-<h3 class="mt-5" style="margin-left: 70px; color:green; font-weight:bold; ">Peta Desa Penjajap</h3>
+<h3 class="mt-5" style="margin-left: 70px; color:#347928; font-weight:bold; ">Peta Desa Penjajap</h3>
 <p style="margin-left: 70px; font-size:18px; ">Menampilkan Peta Desa Dengan Desa Dengan Interest Point Desa Penjajap</p>
 <div class="map-container">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
@@ -365,7 +365,7 @@
 <div class="container py-5">
   <div class="row">
       <div class="col-12">
-          <h2 class=" font-weight-bold section-title" style="color: green;">GALERI DESA</h2>
+          <h2 class=" font-weight-bold section-title" style="color:#347928;">GALERI DESA</h2>
           <p class="text-normal mb-5" style="margin-top:5px; margin-left:2px;">Menampilkan kegiatan-kegiatan yang berlangsung di desa</p>
       </div>
   </div>
