@@ -47,8 +47,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 // // Route untuk CRUD Infografis
 // Route::get('/admin/infographics',[InfographicController::class,'index'])->name('admin.infographics');
-Route::post('/admin/infographics', [InfographicController::class, 'store'])->name('admin.infographics.store');
-Route::put('/admin/infographic/{infographic}', [InfographicController::class, 'update'])->name('admin.infographic.update');
+Route::prefix('admin')->name('admin.')->group(function () {
+    // Route::resource('infographics', InfographicController::class);
+    Route::get('infographics', [InfographicController::class, 'index'])->name('infographics');
+    Route::post('infographics', [InfographicController::class, 'store'])->name('infographics.store');
+    Route::put('infographics/{infographic}', [InfographicController::class, 'update'])->name('infographics.update');
+});
+
+
 
 // // Route untuk CRUD banner di dashboard
 // Route::prefix('admin')->name('admin.')->group(function () {
