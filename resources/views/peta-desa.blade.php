@@ -13,21 +13,64 @@
             font-family: Arial, sans-serif;
             padding-top: 100px;
         }
+        .nav-tittle {
+            color: #347928;
+        }
+        .nav-tittle.scrolled {
+             color: #E9EFEC; /* Warna setelah scroll */    
+        }
+
         .navbar-transparent {
             background-color: rgba(255, 255, 255, 0.5); /* Transparan */
-            transition: background-color 0.3s ease; /* Animasi transisi */
+            transition: background-color 0.3s ease;
         }
 
         .navbar-solid {
-            background-color: rgba(255, 255, 255, 1); /* Warna 5 solid */
-            transition: background-color 0.3s ease; /* Animasi transisi */
+            background-color:#347928; /* Warna solid */
+            transition: background-color 0.3s ease;
         }
+
+        .navbar .nav-link {
+            color: #347928; /* Warna default teks */
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -2px; /* Posisi garis berada di bawah teks */
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #C0EBA6; /* Warna garis hijau */
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-link.active {
+            color: green; /* Ubah warna teks saat menu aktif */
+        }
+
+
+        .navbar.scrolled .nav-link {
+            color: #E9EFEC;
+        }
+            
+        
         .navbar-nav .nav-item {
-            margin-right: 15px; /* Memberikan jarak antar item */
+            margin-right: 17px; /* Memberikan jarak antar item */
         }
+
         .navbar-nav .nav-item:last-child {
             margin-right: 0; /* Menghilangkan margin pada item terakhir */
         }
+
+        .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='red' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
         .custom-card {
             background-color: #f8f9fa;
             border: 1px solid #ddd;
@@ -47,7 +90,7 @@
         }
 
         .footer-container {
-            background: linear-gradient(to right, #f02b2b, #ff6b6b);
+            background: linear-gradient(to right, green, #61b14b);
             padding: 2rem;
             color: white;
             font-family: Arial, sans-serif;
@@ -69,25 +112,7 @@
 
         .footer-logo img {
             width: 250px;
-            height: 130px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icons a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .visitor-count {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            display: inline-block;
+            height: auto;
         }
 
         .contact-info, .phone-numbers, .links {
@@ -108,7 +133,6 @@
             padding-top: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.3);
         }
-
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr 1fr;
@@ -122,58 +146,43 @@
         }
     </style>
 </head>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container-fluid">
-      <!-- Foto di kiri dan teks di samping kanan -->
-      <a class="navbar-brand d-flex align-items-" href="/">
-        <img src="{{ asset('image/logo sambas.png') }}" alt="logo" 
-          alt="Logo" style="width: 80px; height: 75px; object-fit: cover; margin-right: 10px;">
-        <div>
-          <h1 class="m-2" style="font-size: 18px; font-weight: bold;">Desa Penjajap</h1>
-          <h4 class="m-2" style="font-size: 13px;">Kabupaten Sambas</h4>
-        </div>
-      </a>
-  
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <!-- Merapikan navbar ke tengah 21-->
-        <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profil-desa">Profil Desa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/infografis">Infografis</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/peta-desa">Peta Desa</a>
-          </li>
-        </ul>
-      
+<nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
+  <div class="container-fluid">
+    <!-- Foto di kiri dan teks di samping -->
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="{{ asset('image/logo sambas.png') }}" alt="logo" 
+        style="width: 80px; height: 75px; object-fit: cover; margin-right: 10px;">
+      <div class="nav-tittle">
+        <h1 class="m-2" style="font-size:20px; font-weight: bold;">Desa Penjajap</h1>
+        <h4 class="m-2" style="font-size: 15px;">Kabupaten Sambas</h4>
       </div>
-    </div>
-  </nav>
+    </a>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const navbar = document.querySelector(".navbar");
-  
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) { // Jika halaman digulir lebih dari 50px
-          navbar.classList.remove("navbar-light", "bg-light");
-          navbar.classList.add("navbar-transparent");
-        } else {
-          navbar.classList.remove("navbar-transparent");
-          navbar.classList.add("navbar-light", "bg-light");
-        }
-      });
-    });
-  </script>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <!-- Merapikan navbar ke tengah -->
+      <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height:100px;">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profil-desa">Profil Desa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/infografis">Infografis</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/peta-desa">Peta Desa</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ 
   <h1>Peta Desa Penjajap</h1>
   <h4>Menampilkan Peta Desa Dengan Interest Point Desa Penjajap</h4>
   <div class="map-container">
@@ -186,52 +195,74 @@
           allowfullscreen>
       </iframe>
   </div>
+ 
   <footer class="footer-container">
     <div class="footer-content">
         <div class="footer-logo">
-            <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Desa Kersik">
-            <h3>Desa Kersik</h3>
-            <p>Kecamatan Marang Kayu<br>
-            Kabupaten Kutai Kartanegara<br>
-            Provinsi Kalimantan Timur</p>
-            <div class="social-icons">
-                <a href="#">📘</a>
-                <a href="#">📸</a>
-                <a href="#">𝕏</a>
-                <a href="#">▶️</a>
-                <a href="#">📱</a>
-            </div>
+            <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Desa Penjajap">
+            <h3>Desa Penjajap</h3>
+            <p>Kecamatan Pemangkat<br>
+            Kabupaten Sambas<br>
+            Provinsi Kalimantan Barat</p>
         </div>
-
+        
         <div class="contact-info">
             <h4 class="footer-heading">Kontak Desa</h4>
-            <p>082150208664</p>
-            <p>kersik.marangkayu@kukarkab.go.i</p>
+            <p>Nomor Telepon Desa <br>
+            123456789</p>
+            <p>Email Desa<br>
+            desapenjajap@gmail.com</p>
             <p>Senin - Kamis (08.00 - 15.00) &<br>
             Jum'at (08.00 - 11.00)</p>
-            <p>Jalan Langaseng Dusun Empang<br>
-            RT.003</p>
+            <p>Alamat Desa <br>
+            Jl. Raya Desa Penjajap</p>
         </div>
-
+  
         <div class="phone-numbers">
             <h4 class="footer-heading">Nomor Telepon Penting</h4>
-            <p>Jumadi/Kades Kersik<br>
-            08124236847</p>
-            <p>Yayan/Ambulan Kersik<br>
+            <p>Nomor Kades<br>
+            08124236848</p>
+            <p>Nomor Ambulan Penjajap<br>
             085392095123</p>
+            <p>Nomor Polisi<br>
+            08123456789</p>
+            <p>Nomor Pemadam Kebakaran<br>
+            08123456789</p>
         </div>
-
+  
         <div class="links">
             <h4 class="footer-heading">Jelajahi</h4>
-            <a href="#" style="color: white; text-decoration: none;">Website Kemendesa</a>
-            <a href="#" style="color: white; text-decoration: none;">Website Kemendagri</a>
-            <a href="#" style="color: white; text-decoration: none;">Website Kabupaten Kutai Kartanegara</a>
-            <a href="#" style="color: white; text-decoration: none;">Cek DPT Online</a>
+            <a href="https://kemendesa.go.id/" style="color: white; text-decoration: none;">Website Kemendesa</a>
+            <a href="https://kemendagri.go.id/" style="color: white; text-decoration: none;">Website Kemendagri</a>
+            <a href="https://kalbarprov.go.id/" style="color: white; text-decoration: none;">Website Kalimantan Barat</a>
+            <a href="https://bkpsdmad.sambas.go.id/" style="color: white; text-decoration: none;">Website Kabupaten Sambas</a>
         </div>
     </div>
-
+  
     <div class="copyright">
         © 2024 Powered by PT Digital Desa Indonesia
     </div>
-</footer>
+  </footer>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.querySelector(".navbar");
+  const navTitle = document.querySelector(".nav-tittle");
+  const navLink = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) { // Jika halaman digulir lebih dari 50px
+      navbar.classList.remove("navbar-transparent");
+      navbar.classList.add("navbar-solid");
+      navTitle.classList.add("scrolled");
+      navLink.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("navbar-solid");
+      navbar.classList.add("navbar-transparent");
+      navTitle.classList.remove("scrolled");
+      navLink.classList.remove("scrolled");
+    }
+  });
+});
+</script>
 </body>

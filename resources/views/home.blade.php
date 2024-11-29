@@ -396,10 +396,10 @@
       <!-- Gallery Item 3 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="olahraga.jpg" class="gallery-img" alt="Olahraga">
+              <img src="{{asset ('image/foto6.png')}}" class="gallery-img" alt="Olahraga">
               <div class="card-body">
-                  <h5 class="card-title">Kegiatan Olahraga</h5>
-                  <p class="card-text text-muted">Pertandingan olahraga antar warga</p>
+                  <h5 class="card-title">Tempat Pelelangan Ikan</h5>
+                  <p class="card-text text-muted">Tempat Pelelangan Ikan Yang Ada di Desa Penjajap</p>
               </div>
           </div>
       </div>
@@ -407,7 +407,7 @@
       <!-- Gallery Item 4 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="musrenbang.jpg" class="gallery-img" alt="Musrenbang">
+              <img src="{{asset ('image/foto7.png')}}" class="gallery-img" alt="Musrenbang">
               <div class="card-body">
                   <h5 class="card-title">Musrenbang Desa</h5>
                   <p class="card-text text-muted">Musyawarah Perencanaan Pembangunan Desa</p>
@@ -418,7 +418,7 @@
       <!-- Gallery Item 5 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="pertemuan.jpg" class="gallery-img" alt="Pertemuan Warga">
+              <img src="{{asset ('image/foto9.png')}}" class="gallery-img" alt="Pertemuan Warga">
               <div class="card-body">
                   <h5 class="card-title">Pertemuan Warga</h5>
                   <p class="card-text text-muted">Pertemuan rutin warga desa</p>
@@ -429,7 +429,7 @@
       <!-- Gallery Item 6 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="kunjungan.jpg" class="gallery-img" alt="Kunjungan Tim">
+              <img src="{{asset ('image/foto10.png')}}" class="gallery-img" alt="Kunjungan Tim">
               <div class="card-body">
                   <h5 class="card-title">Kunjungan Tim Juri</h5>
                   <p class="card-text text-muted">Kunjungan tim penilai ke desa</p>
