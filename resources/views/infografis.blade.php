@@ -269,7 +269,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-total-penduduk-Du2cCbAO.svg" alt="Belum Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Total Penduduk</h3>
-                        <div class="stat-value" style="color: #347928">606</div>
+                        <div class="stat-value" style="color: #347928">13.135</div>
                     </div>
                 </div>
             </div>
@@ -278,7 +278,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kepala-keluarga-D4UfE36x.svg" alt="Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kepala Keluarga</h3>
-                        <div class="stat-value" style="color: #347928">457</div>
+                        <div class="stat-value" style="color: #347928">3.803</div>
                     </div>
                 </div>
             </div>
@@ -289,7 +289,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-perempuan-BCmUG8mA.svg" alt="Belum Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Perempuan</h3>
-                        <div class="stat-value" style="color: #347928">606</div>
+                        <div class="stat-value" style="color: #347928">6.388</div>
                     </div>
                 </div>
             </div>
@@ -298,7 +298,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-laki-CmERQRaD.svg" alt="Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Laki-laki</h3>
-                        <div class="stat-value" style="color: #347928">457</div>
+                        <div class="stat-value" style="color: #347928">6.747</div>
                     </div>
                 </div>
             </div>
@@ -376,7 +376,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-islam-B2-fwtBi.svg" alt="Islam" class="stat-icon">
             <div class="stat-info">
                 <h3>Islam</h3>
-                <div class="stat-value" style="color: #347928;">1.135</div>
+                <div class="stat-value" style="color: #347928;">11.424</div>
             </div>
         </div>
     </div>
@@ -387,7 +387,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kristen-CvNUV1pq.svg" alt="Buddha" class="stat-icon">
             <div class="stat-info">
                 <h3>Kristen</h3>
-                <div class="stat-value" style="color: #347928;">0</div>
+                <div class="stat-value" style="color: #347928;">148</div>
             </div>
         </div>
     </div>
@@ -398,7 +398,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-katolik-DFXj5yZv.svg" alt="Konghucu" class="stat-icon">
             <div class="stat-info">
                 <h3>Katolik</h3>
-                <div class="stat-value" style="color: #347928;">0</div>
+                <div class="stat-value" style="color: #347928;">98</div>
             </div>
         </div>
     </div>
@@ -409,7 +409,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-hindu-D9LgBI6W.svg" alt="Kristen" class="stat-icon">
             <div class="stat-info">
                 <h3>Hindu</h3>
-                <div class="stat-value" style="color: #347928;">0</div>
+                <div class="stat-value" style="color: #347928;">1.302</div>
             </div>
         </div>
     </div>
@@ -420,7 +420,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-buddha-Cfftt9vu.svg" alt="Katolik" class="stat-icon">
             <div class="stat-info">
                 <h3>Buddha</h3>
-                <div class="stat-value" style="color: #347928;">0</div>
+                <div class="stat-value" style="color: #347928;">163</div>
             </div>
         </div>
     </div>
@@ -450,32 +450,32 @@
                         <table class="table table-borderless" >
                             <tbody>
                                 <tr>
-                                    <td>Pelajar/Mahasiswa</td>
-                                    <td>316</td>
+                                    <td>Nelayan</td>
+                                    <td>723</td>
                                 </tr>
                                 <tr>
-                                    <td>Belum/Tidak Bekerja</td>
-                                    <td>270</td>
+                                    <td>Pedagang</td>
+                                    <td>448</td>
                                 </tr>
                                 <tr>
-                                    <td>Mengurus Rumah Tangga</td>
-                                    <td>270</td>
+                                    <td>Pegawai Negeri Sipil</td>
+                                    <td>382</td>
                                 </tr>
                                 <tr>
-                                    <td>Karyawan Swasta</td>
-                                    <td>108</td>
+                                    <td>Pengrajin Industri Kecil</td>
+                                    <td>356</td>
                                 </tr>
                                 <tr>
-                                    <td>Nelayan/Perikanan</td>
-                                    <td>51</td>
+                                    <td>Pertanian</td>
+                                    <td>181</td>
                                 </tr>
                                 <tr>
-                                    <td>Petani/Pekebun</td>
-                                    <td>40</td>
+                                    <td>Pengangkutan</td>
+                                    <td>93</td>
                                 </tr>
                                 <tr>
-                                    <td>Wiraswasta</td>
-                                    <td>27</td>
+                                    <td>Lain-lain</td>
+                                    <td>314</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -487,48 +487,48 @@
         <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title">Pelajar/Mahasiswa</h4>
-                    <h2 class="display-4 text-center">316</h2>
+                    <h4 class="card-title">Nelayan</h4>
+                    <h2 class="display-4 text-center">723</h2>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title">Belum/Tidak Bekerja</h4>
-                    <h2 class="display-4 text-center">270</h2>
+                    <h4 class="card-title">Pedagang</h4>
+                    <h2 class="display-4 text-center">448</h2>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title">Mengurus Rumah Tangga</h4>
-                    <h2 class="display-4 text-center">270</h2>
+                    <h4 class="card-title">Pegawai Negeri Sipil</h4>
+                    <h2 class="display-4 text-center">382</h2>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title">Karyawan Swasta</h4>
-                    <h2 class="display-4 text-center">108</h2>
+                    <h4 class="card-title">Pengrajin Industri Kecil</h4>
+                    <h2 class="display-4 text-center">356</h2>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title">Nelayan/Perikanan</h4>
-                    <h2 class="display-4 text-center">51</h2>
+                    <h4 class="card-title">Pertanian</h4>
+                    <h2 class="display-4 text-center">181</h2>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title">Petani/Pekebun</h4>
-                    <h2 class="display-4 text-center">40</h2>
+                    <h4 class="card-title">Pengangkutan</h4>
+                    <h2 class="display-4 text-center">93</h2>
                 </div>
             </div>
         </div>
