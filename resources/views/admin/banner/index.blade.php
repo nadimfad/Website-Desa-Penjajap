@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
     <h1>Manage Banners</h1>
@@ -56,4 +56,4 @@
             @endforeach
         </tbody>
     </table>
-@endsection
+@endsection --}}

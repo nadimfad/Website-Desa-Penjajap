@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
 use App\Models\Gallery;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,8 +17,8 @@ class EmployeeController extends Controller
         // Ambil data employee dan gallery dari database
         $employees = Employee::all();
         $galleries = Gallery::all();
-
-        return view('admin.dashboard', compact('employees', 'galleries'));
+        $banners = Banner::all();
+        return view('admin.dashboard', compact('employees', 'galleries', 'banners'));
     }
 
     // Menyimpan data employee baru
@@ -164,5 +165,71 @@ class EmployeeController extends Controller
         $gallery->delete();
 
         return redirect()->route('admin.dashboard')->with('success', 'Gallery deleted successfully!');
+    }
+
+    //Menampilkan Form untuk menambah banner desa
+    public function storeBanner(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        $photoPath = null;
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('banners', 'public');
+        }
+
+        Banner::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'photo' => $photoPath,
+        ]);
+
+        return redirect()->route('admin.dashboard')->with('success', 'Banner added successfully!');
+    }
+    public function editBanner(Banner $banner)
+    {
+        return view('admin.banner.edit', compact('banner'));
+    }
+
+    public function updateBanner(Request $request, Banner $banner)
+    {
+        // Validasi data yang diterima dari form
+        $request->validate([
+            'photo' => 'image|mimes:jpg,jpeg,png',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+        ]);
+
+        // Update data banner
+        $banner->title = $request->title;
+        $banner->description = $request->description;
+
+        // Jika ada foto baru yang di-upload
+        if ($request->hasFile('photo')) {
+            // Hapus foto lama jika ada
+            if ($banner->photo) {
+                Storage::delete('public/' . $banner->photo);
+            }
+
+            // Simpan foto baru
+            $banner->photo = $request->file('photo')->store('banners', 'public');
+        }
+
+        $banner->save();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Banner update successfully!');
+    }
+
+        public function destroyBanner(Banner $banner)
+    {
+        if ($banner->photo) {
+            Storage::delete('public/' . $banner->photo);
+        }
+        $banner->delete();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Banner deleted successfully!');
     }
 }
