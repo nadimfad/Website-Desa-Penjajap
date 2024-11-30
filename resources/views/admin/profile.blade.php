@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Profile - Visi-Misi</h1>
+    <h1>Profile | Visi</h1>
 
-    <!-- Form untuk tambah atau edit visi-misi -->
+    <!-- Form untuk tambah atau edit visi -->
     <form action="{{ isset($profile) ? route('admin.profile.update', $profile->id) : route('admin.profile.store') }}" method="POST">
         @csrf
         @if(isset($profile))
@@ -18,10 +18,44 @@
 
     <hr>
 
-    <h2>Visi-Misi Ter-Update</h2>
+    <h2>Profile | Misi</h2>
+
+    <!-- Form untuk tambah misi -->
+    <form action="{{ route('admin.profile.mission.store') }}" method="POST">
+        @csrf
+        <div class="mb-3">
+            <label for="mission" class="form-label">Tambah Misi</label>
+            <textarea name="mission" class="form-control" rows="2" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Tambah</button>
+    </form>
+
+    <hr>
+
+    <!-- Daftar misi -->
+    <h3>Misi List Update</h3>
+    @if($missions->isNotEmpty())
+        <ul>
+            @foreach($missions as $mission)
+                <li>
+                    {{ $mission->mission }}
+                    <!-- Form untuk update misi -->
+                    <form action="{{ route('admin.profile.mission.update', $mission->id) }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        @method('PUT')
+                        <textarea name="mission" class="form-control" rows="1" required>{{ $mission->mission }}</textarea>
+                        <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                    </form>
+                </li>
+            @endforeach
+        </ul>
+    @else
+        <p>No missions available.</p>
+    @endif
+    <h3>Visi Update</h3>
     @if(isset($profile))
         <p>{{ $profile->visi_misi }}</p>
     @else
-        <p>No Vision and Mission set yet.</p>
+        <p>Belum ada Visi</p>
     @endif
 @endsection

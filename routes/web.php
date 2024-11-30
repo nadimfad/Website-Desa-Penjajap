@@ -63,6 +63,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Route untuk memperbarui data profile
     Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+
+    //Route untuk memperbarui Misi
+    Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('profile/mission', [ProfileController::class, 'storeMission'])->name('profile.mission.store');
+    Route::put('profile/mission/{id}', [ProfileController::class, 'updateMission'])->name('profile.mission.update');
 });
 
 // // Route untuk CRUD Infografis

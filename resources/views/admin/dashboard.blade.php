@@ -1,15 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Dashboard | Employee</h1>
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+<!-- Form untuk tambah banner Desa -->
+<h1>Dashboard | Banner Desa</h1>
 
-    <!-- Form untuk tambah data employee-->
-    <form action="{{ route('admin.employee.store') }}" method="POST" enctype="multipart/form-data">
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+<form action="{{ route('admin.banner.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" name="title" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Deskripsi</label>
+        <textarea class="form-control" name="description" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="photo" class="form-label">Foto</label>
+        <input type="file" class="form-control" name="photo" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-primary">Simpan Banner Desa</button>
+</form>
+
+<hr>
+
+<!-- Form untuk tambah data employee-->
+<h1>Dashboard | Employee</h1>
+@if(session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+<form action="{{ route('admin.employee.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="photo" class="form-label">Foto</label>
@@ -56,32 +83,36 @@
 
     <hr>
 
-    <!-- Form untuk tambah banner Desa -->
-    <h1>Dashboard | Banner Desa</h1>
 
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    <form action="{{ route('admin.banner.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" name="title" required>
-        </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Deskripsi</label>
-            <textarea class="form-control" name="description" required></textarea>
-        </div>
-        <div class="mb-3">
-            <label for="photo" class="form-label">Foto</label>
-            <input type="file" class="form-control" name="photo" accept="image/*">
-        </div>
-        <button type="submit" class="btn btn-primary">Simpan Banner Desa</button>
-    </form>
-
+    <!-- Menampilkan Data Banner Desa -->
+    <h2>Banner Desa</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Judul</th>
+                <th>Deskripsi</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($banners as $banner)
+                <tr>
+                    <td><img src="{{ asset('storage/' . $banner->photo) }}" alt="foto" width="100"></td>
+                    <td>{{ $banner->title }}</td>
+                    <td>{{ $banner->description }}</td>
+                    <td>
+                        <a href="{{ route('admin.banner.edit', $banner) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{{ route('admin.banner.destroy', $banner) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
     <hr>
 
     <!-- Daftar Employees -->
@@ -136,37 +167,6 @@
                     <td>
                         <a href="{{ route('admin.galleries.edit', $gallery) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('admin.galleries.destroy', $gallery) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-    <hr>
-
-    <!-- Menampilkan Data Banner Desa -->
-    <h2>Banner Desa</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Judul</th>
-                <th>Deskripsi</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($banners as $banner)
-                <tr>
-                    <td><img src="{{ asset('storage/' . $banner->photo) }}" alt="foto" width="100"></td>
-                    <td>{{ $banner->title }}</td>
-                    <td>{{ $banner->description }}</td>
-                    <td>
-                        <a href="{{ route('admin.banner.edit', $banner) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <form action="{{ route('admin.banner.destroy', $banner) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
