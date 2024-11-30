@@ -183,17 +183,17 @@
 </nav>
 
  
-  <h1>Peta Desa Penjajap</h1>
-  <h4>Menampilkan Peta Desa Dengan Interest Point Desa Penjajap</h4>
+  <p style="font-size: 30px; margin:30px 40px 0px; color:#347928; font-weight: bold;">Peta Desa Penjajap</p>
+  <p class="text-muted" style="font-size: 18px; margin:0px 40px 20px;">Menampilkan Peta Desa Dengan Interest Point Desa Penjajap</p>
   <div class="map-container">
-      <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
-          width="100%" 
-          height="400px" 
-          frameborder="0" 
-          style="border: 0;" 
-          allowfullscreen>
-      </iframe>
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
+    width="100%" 
+    height="600px" 
+    frameborder="0" 
+    style="border: 0;" 
+    allowfullscreen>
+</iframe>
   </div>
  
   <footer class="footer-container">

@@ -240,12 +240,12 @@
         </div>
 
         <!-- Bagan Desa -->
-        <p style="font-weight: bold; color:#347928; font-size:28px; margin-left:70px;">Bagan Desa</p>
+        <p style="font-weight: bold; color:#347928; font-size:28px; margin-left:70px; margin-bottom:0px;">Bagan Desa</p>
         <p style="font-size: 20px; margin-left:70px;">Bagan Struktur Desa Penjajap</p>
         <img src="https://cdn.digitaldesa.com/uploads/profil/64.02.17.2005/common/f6f6d96a1cd6ee00b0df15c9ff8a2ae1.png" alt="" style="width: 100%; height: auto; padding:0px 50px; ">
 
         <!-- STRUKTUR ORGANISASI BADAN PERMUSYAWARATAN DESA -->
-        <p style="font-weight:bold; color:#347928; font-size:28px; margin-left:50px; margin-top:30px;">STRUKTUR ORGANISASI BADAN PERMUSYAWARATAN DESA</p>
+        <p style="font-weight:bold; color:#347928; font-size:28px; margin-left:50px; margin-top:40px; margin-bottom:0px;">STRUKTUR ORGANISASI BADAN PERMUSYAWARATAN DESA</p>
         <img src="https://cdn.digitaldesa.com/uploads/profil/64.02.17.2005/common/f3070a5e9163d61f162d16e39d50f4e4.jpg" alt="" style="width: 100%; height: auto; padding:10px 50px; ">
     
 

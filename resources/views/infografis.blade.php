@@ -238,7 +238,7 @@
       </nav>
 
       <div class="container my-5" style="padding: 50px;">
-        <h1 class="text-danger font-weight-bold">DEMOGRAFI PENDUDUK</h1>
+        <p class="font-weight-bold" style="font-size:30px; color: #347928" >DEMOGRAFI PENDUDUK</p>
         <p>Memberikan informasi lengkap mengenai karakteristik demografi penduduk suatu wilayah. Mulai dari jumlah penduduk, jenis kelamin, pekerjaan, agama, dan aspek penting lainnya yang menggambarkan komposisi populasi secara rinci.</p>
 
         <div class="row align-items-center">
@@ -260,7 +260,7 @@
     </div>
 
     <div class="text-start mt-5 mb-5" style="padding: 0 80px;">
-        <h1 style="margin-left:70px;">Jumlah Penduduk dan Kepala Keluarga</h1>
+        <p class="font-weight-bold" style=" color:#347928; font-size:30px;">Jumlah Penduduk dan Kepala Keluarga</p>
 
         <!-- Statistik Jumlah Penduduk -->
         <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -269,7 +269,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-total-penduduk-Du2cCbAO.svg" alt="Belum Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Total Penduduk</h3>
-                        <div class="stat-value">606</div>
+                        <div class="stat-value" style="color: #347928">606</div>
                     </div>
                 </div>
             </div>
@@ -278,7 +278,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kepala-keluarga-D4UfE36x.svg" alt="Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kepala Keluarga</h3>
-                        <div class="stat-value">457</div>
+                        <div class="stat-value" style="color: #347928">457</div>
                     </div>
                 </div>
             </div>
@@ -289,7 +289,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-perempuan-BCmUG8mA.svg" alt="Belum Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Perempuan</h3>
-                        <div class="stat-value">606</div>
+                        <div class="stat-value" style="color: #347928">606</div>
                     </div>
                 </div>
             </div>
@@ -298,25 +298,25 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-laki-CmERQRaD.svg" alt="Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Laki-laki</h3>
-                        <div class="stat-value">457</div>
+                        <div class="stat-value" style="color: #347928">457</div>
                     </div>
                 </div>
             </div>
         </div>
 
 
-      <div class="text-center mt-5 mb-5">
-        <h1 class="text-center text-danger mb-5">Statistik Berdasarkan Perkawinan dan Agama</h1>
+      <div class="mt-5 mb-5">
+        <p class="font-weight-bold" style="color: #347928; font-size:30px; margin-left:8px;">Statistik Berdasarkan Perkawinan dan Agama</p>
 
         <!-- Statistik Berdasarkan Perkawinan -->
-        <h2 class="text-center mb-4">Berdasarkan Perkawinan</h2>
+        <p style="font-size: 20px; color:#7b8480; margin-left:8px; margin-top:0px;">Berdasarkan Perkawinan</p>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
                 <div class="stat-card">
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-belum-kawin-B6LGf_QT.svg" alt="Belum Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Belum Kawin</h3>
-                        <div class="stat-value">606</div>
+                        <div class="stat-value" style="color: #347928;">606</div>
                     </div>
                 </div>
             </div>
@@ -325,7 +325,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kawin-DDA193Z5.svg" alt="Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kawin</h3>
-                        <div class="stat-value">457</div>
+                        <div class="stat-value" style="color: #347928;">457</div>
                     </div>
                 </div>
             </div>
@@ -334,7 +334,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-cerai-mati-VdEzxQgX.svg" alt="Cerai Mati" class="stat-icon">
                     <div class="stat-info">
                         <h3>Cerai Mati</h3>
-                        <div class="stat-value">70</div>
+                        <div class="stat-value" style="color: #347928;">70</div>
                     </div>
                 </div>
             </div>
@@ -343,7 +343,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kawin-tercatat-Cr_1J14L.svg"alt="Kawin Tercatat" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kawin Tercatat</h3>
-                        <div class="stat-value">0</div>
+                        <div class="stat-value" style="color: #347928;">0</div>
                     </div>
                 </div>
             </div>
@@ -352,7 +352,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kawin-tak-tercatat-Ba6jJHqw.svg" alt="Kawin Tidak Tercatat" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kawin Tidak Tercatat</h3>
-                        <div class="stat-value">0</div>
+                        <div class="stat-value" style="color: #347928;">0</div>
                     </div>
                 </div>
             </div>
@@ -361,14 +361,14 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-cerai-hidup-c75sVKpW.svg" alt="Cerai Hidup" class="stat-icon">
                     <div class="stat-info">
                         <h3>Cerai Hidup</h3>
-                        <div class="stat-value">0</div>
+                        <div class="stat-value" style="color: #347928;">0</div>
                     </div>
                 </div>
             </div>
         </div>
 
      <!-- Statistik Berdasarkan Agama -->
-<h2 class="text-center mt-5 mb-4">Berdasarkan Agama</h2>
+<p class="mt-5 mb-4 font-weight-bold" style="font-size: 30px; color:#347928;">Berdasarkan Agama</p>
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <!-- Islam -->
     <div class="col">
@@ -376,7 +376,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-islam-B2-fwtBi.svg" alt="Islam" class="stat-icon">
             <div class="stat-info">
                 <h3>Islam</h3>
-                <div class="stat-value">1.135</div>
+                <div class="stat-value" style="color: #347928;">1.135</div>
             </div>
         </div>
     </div>
@@ -387,7 +387,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kristen-CvNUV1pq.svg" alt="Buddha" class="stat-icon">
             <div class="stat-info">
                 <h3>Kristen</h3>
-                <div class="stat-value">0</div>
+                <div class="stat-value" style="color: #347928;">0</div>
             </div>
         </div>
     </div>
@@ -398,7 +398,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-katolik-DFXj5yZv.svg" alt="Konghucu" class="stat-icon">
             <div class="stat-info">
                 <h3>Katolik</h3>
-                <div class="stat-value">0</div>
+                <div class="stat-value" style="color: #347928;">0</div>
             </div>
         </div>
     </div>
@@ -409,7 +409,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-hindu-D9LgBI6W.svg" alt="Kristen" class="stat-icon">
             <div class="stat-info">
                 <h3>Hindu</h3>
-                <div class="stat-value">0</div>
+                <div class="stat-value" style="color: #347928;">0</div>
             </div>
         </div>
     </div>
@@ -420,7 +420,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-buddha-Cfftt9vu.svg" alt="Katolik" class="stat-icon">
             <div class="stat-info">
                 <h3>Buddha</h3>
-                <div class="stat-value">0</div>
+                <div class="stat-value" style="color: #347928;">0</div>
             </div>
         </div>
     </div>
@@ -428,10 +428,10 @@
     <!-- Konghucu -->
     <div class="col">
         <div class="stat-card">
-            <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-buddha-Cfftt9vu.svg" alt="Hindu" class="stat-icon">
+            <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-konghuchu-Bt_R-Ivr.svg" alt="Hindu" class="stat-icon">
             <div class="stat-info">
                 <h3>Konghucu</h3>
-                <div class="stat-value">0</div>
+                <div class="stat-value" style="color: #347928;">0</div>
               </div>
             </div>
         </div>
@@ -440,7 +440,7 @@
 
   <!-- Main Content -->
   <div class="container mt-5">
-    <h2 class="mb-4">Berdasarkan Pekerjaan</h2>
+    <h2 class="mb-4" style="margin-left: 2px;">Berdasarkan Pekerjaan</h2>
     <div class="col d-flex">
         <div class="col-md-6">
             <div class="card mb-4">

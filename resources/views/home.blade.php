@@ -67,12 +67,12 @@
         }
 
         .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='red' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='red' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
 
         .custom-card {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
+            background-color: #EEEEEE;
+            border: 10px solid #ddd;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px #0000001a;
@@ -111,7 +111,7 @@
         }
         .gallery-img {
             width: 100%;
-            height: 250px;
+            /* height: 250px; */
             object-fit: cover;
             border-radius: 8px;
         }
@@ -123,7 +123,7 @@
         }
         .map-container iframe {
             width: 100%;
-            height: 450px;
+            height: 550px;
             border: none;
         }
         footer {
@@ -229,8 +229,8 @@
       
       <!-- Menambahkan padding-top yang lebih besar agar konten tidak tertutup -->
       <div class="container mt-5 pt-5" style="padding-top: 120px;">
-        <h2 class="text-center mb-2 mt-4">Selamat Datang di Website Desa Penjajap</h2>
-        <h3 class="text-center mb-3">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</h3>
+        <p class="text-center mb-2 mt-5 font-weight-bold" style="color: #347928; font-size:36px;">Selamat Datang di Website Desa Penjajap</p>
+        <p class="text-center mb-3" style="font-size: 24px; color:#4A4947;">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</p>
         <!-- Konten lainnya di sini -->
       </div>
       
@@ -285,7 +285,7 @@
       </div>
       <div class="col-md-8">
           <h1 class="font-weight-bold" style="color: #347928">Sambutan Kepala Desa</h1>
-          <h3 class="mb-1">JUMADI</h3>
+          <h3 class="mb-1" style="color: #4A4947">JUMADI</h3>
           <h5 class="text-muted mb-4">Kepala Desa Kersik</h5>
           
           <p class="mb-0">Assalamualaikum Warahmatullahi Wabarakatuh.</p>
@@ -310,63 +310,63 @@
     <!-- Card Section -->
     
 <p class="mt-5 mb-0" style="padding-top: 50px; margin-left:70px; font-size:35px; color:#347928; font-weight:bolder; ">SOTK</p>
-<p style="margin-left: 70px; font-size:22px;">Struktur Organisasi dan Tata Kerja Desa Penjajap</p>
+<p style="margin-left: 70px; font-size:22px; color:#4A4947;">Struktur Organisasi dan Tata Kerja Desa Penjajap</p>
 
 <div class="container mt-4">
     <div class="row justify-content-center">
         <!-- Card 1 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Image 1">
-                <h5>Nama Foto 1</h5>
-                <p>This is a simple card with custom style applied using inline CSS.</p>
+                <img src="{{ asset('image/kades.png') }}" class="img-fluid mb-3" alt="Image 1" style= "height:200px;">
+                <h5>Kepala Desa</h5>
+                <p>Rudiansyah</p>
             </div>
         </div>
         <!-- Card 2 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Image 2">
-                <h5>Nama Foto 2</h5>
-                <p>This is another card with custom styling applied.</p>
+                <img src="{{ asset('image/kades2.png') }}" class="img-fluid mb-3" alt="Image 2" style= "height:200px;">
+                <h5>Kepala Sekretariat Desa</h5>
+                <p>Budi Hartono</p>
             </div>
         </div>
         <!-- Card 3 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Image 3">
-                <h5>Nama Foto 3</h5>
-                <p>This is the third card with similar style as the others.</p>
+                <img src="{{ asset('image/kades3.png') }}" class="img-fluid mb-3" alt="Image 3" style= "height:200px;">
+                <h5> Perangkat Desa</h5>
+                <p>Kaur Keuangan</p>
             </div>
         </div>
         <!-- Card 4 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Image 4">
-                <h5>Nama Foto 4</h5>
-                <p>This is the fourth card with similar style as the others.</p>
+                <img src="{{ asset('image/kades4.png') }}" class="img-fluid mb-3" alt="Image 4" style= "height:200px;">
+                <h5>Kaur Pemerintahan</h5>
+                <p>Ranri Kurnia</p>
             </div>
         </div>
     </div>
 </div>
 
 <h3 class="mt-5" style="margin-left: 70px; color:#347928; font-weight:bold; ">Peta Desa Penjajap</h3>
-<p style="margin-left: 70px; font-size:18px; ">Menampilkan Peta Desa Dengan Desa Dengan Interest Point Desa Penjajap</p>
+<p style="margin-left: 70px; font-size:18px; color:#4A4947; ">Menampilkan Peta Desa Dengan Desa Dengan Interest Point Desa Penjajap</p>
 <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
-    width="350" 
-    height="350" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
+    width="100%" 
+    height="600px" 
+    frameborder="0" 
+    style="border: 0;" 
+    allowfullscreen>
 </iframe>
 </div>
 
 <div class="container py-5">
   <div class="row">
       <div class="col-12">
-          <h2 class=" font-weight-bold section-title" style="color:#347928;">GALERI DESA</h2>
-          <p class="text-normal mb-5" style="margin-top:5px; margin-left:2px;">Menampilkan kegiatan-kegiatan yang berlangsung di desa</p>
+          <p class=" font-weight-bold section-title" style="color:#347928; font-size:30px;">GALERI DESA</p>
+          <p class="mb-5" style="margin-top:5px; margin-left:2px; color:#4A4947; font-size:18px;">Menampilkan kegiatan-kegiatan yang berlangsung di desa</p>
       </div>
   </div>
 
