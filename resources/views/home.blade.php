@@ -242,27 +242,15 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="carousel-caption">
-                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/infografis">Desa Penjajap</a></h2>
-                <p>Description for Image 1</p>
+    @foreach($banners as $key=>$banner)
+            <div class="carousel-item {{$key == 0 ?'active':''}}">
+                <div class="carousel-caption">
+                    <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/infografis">{{$banner->title}}</a></h2>
+                    <p>{{$banner->description}}</p>
+                </div>
+                <img src="{{ $banner->photo ? asset("storage/".$banner->photo) : asset("image/foto1.png") }}" class="d-block w-100" alt="Image 1">
             </div>
-            <img src="{{ asset('image/foto1.png') }}" class="d-block w-100" alt="Image 1">
-        </div>
-        <div class="carousel-item">
-            <div class="carousel-caption">
-                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/peta-desa"> Website Resmi Desa Penjajap </a></h2>
-                <p>Description for Image 2</p>
-            </div>
-            <img src="{{ asset('image/foto2.png') }}" class="d-block w-100" alt="Image 2">
-        </div>
-        <div class="carousel-item">
-            <div class="carousel-caption">
-                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/profil-desa"> Website Resmi Desa Penjajap </a></h2>
-                <p>Description for Image 3</p>
-            </div>
-            <img src="{{ asset('image/foto3.png') }}" class="d-block w-100" alt="Image 3">
-        </div>
+        @endforeach
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -282,7 +270,7 @@
       </div>
       <div class="col-md-9" style="margin-left: 270px; margin-top: -200px; border-left: 1px solid black; padding-left:50px;">
           <h1 class="font-weight-bold mb-3" style="color: #347928">Sambutan Kepala Desa</h1>
-          <h3 class="mb-1" style="color: #434343; font-weight:600;">RUDIANSYAH</h3>
+          <h3 class="mb-1" style="color: #434343; font-weight:600;"></h3>
           <h5 class="text-muted mb-4" style="font-size: 16px;">Kepala Desa Penjajap</h5>
           
           <p class="mb-0">Assalamualaikum Warahmatullahi Wabarakatuh.</p>
