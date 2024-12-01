@@ -4,11 +4,10 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Models\Sambutan;
-
 use App\Http\Controllers\ProfilDesaController;
+use App\Http\Controllers\InfografisDesaController;
 use App\Http\Controllers\PetaDesaController;
 
-Route::view( '/infografis', 'infografis');
 Route::view( '/peta-desa', 'peta-desa');
 
 use App\Http\Controllers\AdminHomeController;
@@ -22,6 +21,7 @@ use App\Http\Controllers\Admin\JobController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/profil-desa', [ProfilDesaController::class, 'index']);
+Route::get('/infografis',[InfografisDesaController::class, 'index']);
 
 // Route untuk halaman admin utama (dashboard)
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -96,34 +96,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::put('infographics/jobs/{id}', [InfographicController::class, 'updateJob'])->name('infographics.updateJob');
     Route::delete('infographics/jobs/{id}', [InfographicController::class, 'destroyJob'])->name('infographics.destroyJob');
 });
-
-//Route untuk CRUD Job(Pekerjaan)
-// Route::prefix('admin')->name('admin.')->group(function () {
-//     Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
-//     Route::post('jobs', [JobController::class, 'store'])->name('jobs.store');
-//     Route::put('jobs/{id}', [JobController::class, 'update'])->name('jobs.update');
-//     Route::delete('jobs/{id}', [JobController::class, 'destroy'])->name('jobs.destroy');
-// });
-
-
-
-// // Route untuk CRUD banner di dashboard
-// Route::prefix('admin')->name('admin.')->group(function () {
-//     Route::resource('banner', BannerController::class);
-// });
-// Route::prefix('admin')->name('admin.')->group(function () {
-//     Route::resource('banner', BannerController::class);
-// });
-// // // Route untuk CRUD Gallery Desa
-// Route::prefix('admin')->name('admin.')->group(function () {
-//     Route::resource('village-gallery', VillageGalleryController::class);
-// });
-
-
-// Route::get('/admin', [AdminHomeController::class, 'admin'])->name('admin.home');
-// Route::get('/admin/profile', [AdminHomeController::class, 'profile'])->name('admin.profile');
-// Route::get('/admin/pengumuman', [AdminHomeController::class, 'pengumuman'])->name('admin.pengumuman');
-// Route::get('/admin/kegiatan', [AdminHomeController::class, 'kegiatan'])->name('admin.kegiatan');
-// Route::get('/admin/kontak', [AdminHomeController::class, 'kontak'])->name('admin.kontak');
-// Route::get('/admin/pengguna', [AdminHomeController::class, 'pengguna'])->name('admin.pengguna');
 
