@@ -270,15 +270,11 @@
       </div>
       <div class="col-md-9" style="margin-left: 270px; margin-top: -200px; border-left: 1px solid black; padding-left:50px;">
           <h1 class="font-weight-bold mb-3" style="color: #347928">Sambutan Kepala Desa</h1>
-          <h3 class="mb-1" style="color: #434343; font-weight:600;"></h3>
+          <h3 class="mb-1" style="color: #434343; font-weight:600;">{{$sambutans->name}}</h3>
           <h5 class="text-muted mb-4" style="font-size: 16px;">Kepala Desa Penjajap</h5>
           
           <p class="mb-0">Assalamualaikum Warahmatullahi Wabarakatuh.</p>
-          <p class="mb-4" style="text-align:justify;">Website ini hadir sebagai wujud transformasi desa Kersik menjadi desa yang 
-          mampu memanfaatkan teknologi informasi dan komunikasi, terintegrasi kedalam sistem online. 
-          Keterbukaan informasi publik, pelayanan publik dan kegiatan perekonomian di desa, 
-          guna mewujudkan desa Kersik sebagai desa wisata yang berkelanjutan, adaptasi dan 
-          mitigasi terhadap perubahan iklim serta menjadi desa yang mandiri.</p>
+          <p class="mb-4" style="text-align:justify;">{{$sambutans->descriptions}}</p>
           
           <p>Terima kasih kepada semua pihak yang telah banyak memberi dukungan</p>
           
@@ -295,41 +291,18 @@
     
 <p class="mt-5 mb-0 text-center" style="text-decoration:underline; padding-top: 50px; font-size:35px; color:#347928; font-weight:bolder;">SOTP</p>
 <p class="text-center" style="font-size:18px; color:#4A4947;">Struktur Organisasi dan Tata Kerja Desa Penjajap</p>
-
 <div class="container mt-4">
     <div class="row justify-content-center">
         <!-- Card 1 -->
+        @foreach($employees as $employee)
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="{{ asset('image/kades.png') }}" class="img-fluid mb-3" alt="Image 1" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
-                <h5 style="font-weight: 800; font-size:18px;">Kepala Desa</h5>
-                <p>Rudiansyah</p>
+                <img src="{{ asset('storage/'.$employee->photo) }}" class="img-fluid mb-3" alt="Image 1" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;">{{$employee->position}}</h5>
+                <p>{{$employee->name}}</p>
             </div>
         </div>
-        <!-- Card 2 -->
-        <div class="col-md-3">
-            <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="{{ asset('image/kades2.png') }}" class="img-fluid mb-3" alt="Image 2" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
-                <h5 style="font-weight: 800; font-size:18px;">Kepala Sekretariat Desa</h5>
-                <p>Budi Hartono</p>
-            </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-md-3">
-            <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="{{ asset('image/kades3.png') }}" class="img-fluid mb-3" alt="Image 3" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
-                <h5 style="font-weight: 800; font-size:18px;"> Perangkat Desa</h5>
-                <p>Kaur Keuangan</p>
-            </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="col-md-3">
-            <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="{{ asset('image/kades4.png') }}" class="img-fluid mb-3" alt="Image 4" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
-                <h5 style="font-weight: 800; font-size:18px;">Kaur Pemerintahan</h5>
-                <p>Ranri Kurnia</p>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
@@ -356,70 +329,17 @@
 
   <div class="row">
       <!-- Gallery Item 1 -->
+      @foreach($galleries as $gallery)
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="{{ asset('image/foto4.png') }}" class="gallery-img" alt="Kegiatan Makan Bersama">
+              <img src="{{ asset('storage/'.$gallery->photo) }}" class="gallery-img" alt="Kegiatan Makan Bersama">
               <div class="card-body">
-                  <h5 class="card-title">Penyebrangan Masyarakat</h5>
-                  <p class="card-text text-muted">Penyebrangan masyarakat di pelabuhan penjajap</p>
+                  <h5 class="card-title">{{$gallery->title}}</h5>
+                  <p class="card-text text-muted">{{$gallery->description}}</p>
               </div>
           </div>
       </div>
-
-      <!-- Gallery Item 2 -->
-      <div class="col-md-4 gallery-item">
-          <div class="card border-0 shadow-sm">
-              <img src="{{ asset('image/foto5.png') }}" class="gallery-img" alt="Pelatihan">
-              <div class="card-body">
-                  <h5 class="card-title">Pertemuan Warga</h5>
-                  <p class="card-text text-muted">Pertemuan Rutin Yang Dilakukan Oleh Warga Desa Penjajap</p>
-              </div>
-          </div>
-      </div>
-
-      <!-- Gallery Item 3 -->
-      <div class="col-md-4 gallery-item">
-          <div class="card border-0 shadow-sm">
-              <img src="{{asset ('image/foto6.png')}}" class="gallery-img" alt="Olahraga">
-              <div class="card-body">
-                  <h5 class="card-title">Tempat Pelelangan Ikan</h5>
-                  <p class="card-text text-muted">Tempat Pelelangan Ikan Yang Ada di Desa Penjajap</p>
-              </div>
-          </div>
-      </div>
-
-      <!-- Gallery Item 4 -->
-      <div class="col-md-4 gallery-item">
-          <div class="card border-0 shadow-sm">
-              <img src="{{asset ('image/foto7.png')}}" class="gallery-img" alt="Musrenbang">
-              <div class="card-body">
-                  <h5 class="card-title">Musrenbang Desa</h5>
-                  <p class="card-text text-muted">Musyawarah Perencanaan Pembangunan Desa</p>
-              </div>
-          </div>
-      </div>
-
-      <!-- Gallery Item 5 -->
-      <div class="col-md-4 gallery-item">
-          <div class="card border-0 shadow-sm">
-              <img src="{{asset ('image/foto9.png')}}" class="gallery-img" alt="Pertemuan Warga">
-              <div class="card-body">
-                  <h5 class="card-title">Pertemuan Warga</h5>
-                  <p class="card-text text-muted">Pertemuan rutin warga desa</p>
-              </div>
-          </div>
-      </div>
-
-      <!-- Gallery Item 6 -->
-      <div class="col-md-4 gallery-item">
-          <div class="card border-0 shadow-sm">
-              <img src="{{asset ('image/foto10.png')}}" class="gallery-img" alt="Kunjungan Tim">
-              <div class="card-body">
-                  <h5 class="card-title">Kunjungan Tim Juri</h5>
-                  <p class="card-text text-muted">Kunjungan tim penilai ke desa</p>
-              </div>
-          </div>
-      </div>
+      @endforeach
   </div>
 </div>
 
