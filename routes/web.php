@@ -8,7 +8,6 @@ use App\Models\Sambutan;
 use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\PetaDesaController;
 
-Route::view('/profil-desa', 'profil-desa');
 Route::view( '/infografis', 'infografis');
 Route::view( '/peta-desa', 'peta-desa');
 
@@ -22,6 +21,7 @@ use App\Http\Controllers\Admin\JobController;
 // use App\Http\Controllers\admin\AdminController;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/profil-desa', [ProfilDesaController::class, 'index']);
 
 // Route untuk halaman admin utama (dashboard)
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
