@@ -57,6 +57,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/sambutan/edit/{sambutan}', [EmployeeController::class, 'editsambutan'])->name('sambutan.edit');
     Route::put('/sambutan/update/{sambutan}', [EmployeeController::class, 'updatesambutan'])->name('sambutan.update');
     Route::delete('/sambutan/destroy/{sambutan}', [EmployeeController::class, 'destroysambutan'])->name('sambutan.destroy');
+
+    // Video Routes
+    // Route::post('/videoProfile/store', [EmployeeController::class, 'storeVideoProfile'])->name('videoProfile.store');
+    // Route::get('/videoProfile/edit/{videoProfile}', [EmployeeController::class, 'editVideoProfile'])->name('videoProfile.edit');
+    // Route::put('/videoProfile/update/{videoProfile}', [EmployeeController::class, 'updateVideoProfile'])->name('videoProfile.update');
+    // Route::delete('/videoProfile/destroy/{videoProfile}', [EmployeeController::class, 'destroyVideoProfile'])->name('videoProfile.destroy');
 });
 
 

@@ -49,7 +49,6 @@
     <button type="submit" class="btn btn-primary">Simpan Kata Sambutan</button>
 </form>
 <hr>
-
 <!-- Form untuk tambah data employee-->
 <h1>Home | Employee</h1>
 @if(session('success'))
@@ -71,16 +70,16 @@
             <label for="position" class="form-label">Jabatan</label>
             <input type="text" name="position" class="form-control" required>
         </div>
-
+        
         <button type="submit" class="btn btn-primary">Simpan Perangkat Desa</button>
     </form>
-
+    
     <hr>
-
+    
     <!-- Form untuk tambah galeri desa -->
     <h1>Home | Galeri Desa</h1>
     @if(session('success'))
-        <div class="alert alert-success">
+    <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
@@ -98,13 +97,10 @@
             <label for="description" class="form-label">Deskripsi</label>
             <textarea name="description" class="form-control" rows="3" required></textarea>
         </div>
-
+        
         <button type="submit" class="btn btn-primary">Simpan Galeri Desa</button>
     </form>
-
     <hr>
-
-
     <!-- Menampilkan Data Banner Desa -->
     <h2>Banner Desa</h2>
     <table class="table">

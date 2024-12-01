@@ -15,7 +15,7 @@ class EmployeeController extends Controller
     // Menampilkan halaman dashboard beserta data employee dan gallery
     public function index()
     {
-        // Ambil data employee dan gallery dari database
+        // Ambil semua data dari database
         $employees = Employee::all();
         $galleries = Gallery::all();
         $banners = Banner::all();
