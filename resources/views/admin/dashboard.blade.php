@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Form untuk tambah banner Desa -->
-<h1>Dashboard | Banner Desa</h1>
+<h1>Home | Banner Desa</h1>
 
 @if(session('success'))
     <div class="alert alert-success">
@@ -29,8 +29,29 @@
 
 <hr>
 
+<!-- Form Kata Sambutan Kepala Desa -->
+<h1>Home | Kata Sambutan Kepala Desa</h1>
+@if(session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+<form action="{{ route('admin.sambutan.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="mb-3">
+        <label for="name" class="form-label">Nama Kepala Desa</label>
+        <input type="text" class="form-control" name="name" required>
+        </div>
+    <div class="mb-3">
+        <label for="descriptions" class="form-label">Kata Sambutan</label>
+        <textarea class="form-control" name="descriptions" required></textarea>
+        </div>
+    <button type="submit" class="btn btn-primary">Simpan Kata Sambutan</button>
+</form>
+<hr>
+
 <!-- Form untuk tambah data employee-->
-<h1>Dashboard | Employee</h1>
+<h1>Home | Employee</h1>
 @if(session('success'))
 <div class="alert alert-success">
     {{ session('success') }}
@@ -57,7 +78,7 @@
     <hr>
 
     <!-- Form untuk tambah galeri desa -->
-    <h1>Dashboard | Galeri Desa</h1>
+    <h1>Home | Galeri Desa</h1>
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -115,6 +136,33 @@
     </table>
     <hr>
 
+    <!-- Menampilkan Data Kata Sambutan -->
+    <h2>Kata Sambutan</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nama Kepala Desa</th>
+                <th>Kata Sambutan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($sambutans as $sambutan)
+            <tr>
+                <td>{{ $sambutan->name }}</td>
+                <td>{{ $sambutan->descriptions }}</td>
+                <td>
+                    <a href="{{ route('admin.sambutan.edit', $sambutan) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{{ route('admin.sambutan.destroy', $sambutan) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+            </tbody>
+        </table>
+        <hr>
     <!-- Daftar Employees -->
     <h2>Daftar Perangkat Desa</h2>
     <table class="table">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Employee;
 use App\Models\Gallery;
 use App\Models\Banner;
+use App\Models\Sambutan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +19,8 @@ class EmployeeController extends Controller
         $employees = Employee::all();
         $galleries = Gallery::all();
         $banners = Banner::all();
-        return view('admin.dashboard', compact('employees', 'galleries', 'banners'));
+        $sambutans = Sambutan::all();
+        return view('admin.dashboard', compact('employees', 'galleries', 'banners', 'sambutans'));
     }
 
     // Menyimpan data employee baru
@@ -231,5 +233,51 @@ class EmployeeController extends Controller
         $banner->delete();
 
         return redirect()->route('admin.dashboard')->with('success', 'Banner deleted successfully!');
+    }
+
+        //Simpan data Kata Sambutan
+        public function storeSambutan(Request $request)
+        {
+            $request->validate([
+                'name' => 'required|string|max:50',
+                'descriptions' => 'required|string',
+            ]);
+
+            Sambutan::create([
+                'name' => $request->name,
+                'descriptions' => $request->descriptions,
+            ]);
+
+            return redirect()->route('admin.dashboard')->with('success', 'Sambutan added successfully!');
+        }
+
+        //Edit data Kata Sambutan
+        public function editSambutan(Sambutan $sambutan)
+        {
+            return view('admin.sambutan.edit', compact('sambutan'));
+        }
+
+        //Update data Kata Sambutan
+        public function updateSambutan(Request $request, Sambutan $sambutan)
+        {
+            $request->validate([
+                'name' => 'required|string|max:50',
+                'descriptions' => 'required|string',
+            ]);
+
+            $sambutan->name = $request->name;
+            $sambutan->descriptions = $request->descriptions;
+
+            $sambutan->save();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Sambutan update successfully!');
+        }
+
+        //Hapus Data Kata Sambutan
+        public function destroySambutan(Sambutan $sambutan)
+    {
+        $sambutan->delete();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Sambutan deleted successfully!');
     }
 }

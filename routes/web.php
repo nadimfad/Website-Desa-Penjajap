@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\InfographicController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\JobController;
 // use App\Http\Controllers\admin\AdminController;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -50,6 +51,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/banner/edit/{banner}', [EmployeeController::class, 'editbanner'])->name('banner.edit');
     Route::put('/banner/update/{banner}', [EmployeeController::class, 'updatebanner'])->name('banner.update');
     Route::delete('/banner/destroy/{banner}', [EmployeeController::class, 'destroybanner'])->name('banner.destroy');
+
+    // Sambutan Routes
+    Route::post('/sambutan/store', [EmployeeController::class, 'storesambutan'])->name('sambutan.store');
+    Route::get('/sambutan/edit/{sambutan}', [EmployeeController::class, 'editsambutan'])->name('sambutan.edit');
+    Route::put('/sambutan/update/{sambutan}', [EmployeeController::class, 'updatesambutan'])->name('sambutan.update');
+    Route::delete('/sambutan/destroy/{sambutan}', [EmployeeController::class, 'destroysambutan'])->name('sambutan.destroy');
 });
 
 
@@ -77,7 +84,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('infographics', [InfographicController::class, 'index'])->name('infographics');
     Route::post('infographics', [InfographicController::class, 'store'])->name('infographics.store');
     Route::put('infographics/{infographic}', [InfographicController::class, 'update'])->name('infographics.update');
+
+    //Route job di Infographics
+    Route::post('infographics/jobs', [InfographicController::class, 'storeJob'])->name('infographics.storeJob');
+    Route::put('infographics/jobs/{id}', [InfographicController::class, 'updateJob'])->name('infographics.updateJob');
+    Route::delete('infographics/jobs/{id}', [InfographicController::class, 'destroyJob'])->name('infographics.destroyJob');
 });
+
+//Route untuk CRUD Job(Pekerjaan)
+// Route::prefix('admin')->name('admin.')->group(function () {
+//     Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
+//     Route::post('jobs', [JobController::class, 'store'])->name('jobs.store');
+//     Route::put('jobs/{id}', [JobController::class, 'update'])->name('jobs.update');
+//     Route::delete('jobs/{id}', [JobController::class, 'destroy'])->name('jobs.destroy');
+// });
 
 
 

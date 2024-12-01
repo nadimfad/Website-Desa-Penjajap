@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Infographic;
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class InfographicController extends Controller
@@ -11,7 +12,8 @@ class InfographicController extends Controller
     public function index()
     {
         $infographic = Infographic::first(); // Ambil data infografis pertama
-        return view('admin.infographics', compact('infographic'));
+        $jobs = Job::all(); // Ambil semua data lowongan kerja
+        return view('admin.infographics', compact('infographic', 'jobs'));
     }
 
     public function store(Request $request)
@@ -21,12 +23,6 @@ class InfographicController extends Controller
             'households' => 'required|integer|min:0',
             'female' => 'required|integer|min:0',
             'male' => 'required|integer|min:0',
-            'students' => 'nullable|integer',
-            'unemployed' => 'nullable|integer',
-            'housewife' => 'nullable|integer',
-            'private_employee' => 'nullable|integer',
-            'fisherman' => 'nullable|integer',
-            'farmer' => 'nullable|integer',
             'islam' => 'nullable|integer',
             'kristen' => 'nullable|integer',
             'katolik' => 'nullable|integer',
@@ -54,12 +50,6 @@ class InfographicController extends Controller
         'households' => 'required|integer|min:0',
         'female' => 'required|integer|min:0',
         'male' => 'required|integer|min:0',
-        'students' => 'nullable|integer|min:0',
-        'unemployed' => 'nullable|integer|min:0',
-        'housewife' => 'nullable|integer|min:0',
-        'private_employee' => 'nullable|integer|min:0',
-        'fisherman' => 'nullable|integer|min:0',
-        'farmer' => 'nullable|integer|min:0',
         'islam' => 'nullable|integer|min:0',
         'kristen' => 'nullable|integer|min:0',
         'katolik' => 'nullable|integer|min:0',
@@ -77,5 +67,38 @@ class InfographicController extends Controller
     $infographic->update($request->all());
 
     return redirect()->route('admin.infographics')->with('success', 'Data berhasil diperbarui.');
+    }
+
+    public function storeJob(Request $request)
+    {
+        $request->validate([
+            'job_type' => 'required|string|max:255',
+            'total' => 'required|integer',
+        ]);
+
+        Job::create($request->all());
+
+        return redirect()->route('admin.infographics')->with('success', 'Job added successfully!');
+    }
+
+    public function updateJob(Request $request, $id)
+    {
+        $request->validate([
+            'job_type' => 'required|string|max:255',
+            'total' => 'required|integer',
+        ]);
+
+        $job = Job::findOrFail($id);
+        $job->update($request->all());
+
+        return redirect()->route('admin.infographics')->with('success', 'Job updated successfully!');
+    }
+
+    public function destroyJob($id)
+    {
+        $job = Job::findOrFail($id);
+        $job->delete();
+
+        return redirect()->route('admin.infographics')->with('success', 'Job deleted successfully!');
     }
 }

@@ -17,12 +17,6 @@ return new class extends Migration
         $table->integer('households'); // Kepala Keluarga
         $table->integer('female');
         $table->integer('male');
-        $table->integer('students'); // Jumlah pelajar
-        $table->integer('unemployed'); // Jumlah belum bekerja
-        $table->integer('housewife'); // Jumlah ibu rumah tangga
-        $table->integer('private_employee'); // Jumlah karyawan swasta
-        $table->integer('fisherman'); // Jumlah nelayan
-        $table->integer('farmer'); // Jumlah petani
         $table->integer('islam');  // Jumlah penduduk beragama Islam
         $table->integer('kristen'); // Jumlah penduduk beragama kristen
         $table->integer('katolik'); // Jumlah penduduk beragama katolik
