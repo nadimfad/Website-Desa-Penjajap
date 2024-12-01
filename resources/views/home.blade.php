@@ -10,17 +10,75 @@
     <!-- Custom CSS -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
+
+        .nav-tittle {
+            color: #347928;
+        }
+        .nav-tittle.scrolled {
+             color: #E9EFEC; /* Warna setelah scroll */    
+        }
+
+        .navbar-transparent {
+            background-color: rgba(255, 255, 255, 0.5); /* Transparan */
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-solid {
+            background-color:#347928; /* Warna solid */
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .nav-link {
+            color: #347928; /* Warna default teks */
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -2px; /* Posisi garis berada di bawah teks */
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #C0EBA6; /* Warna garis hijau */
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-link.active {
+            color: green; /* Ubah warna teks saat menu aktif */
+        }
+
+
+        .navbar.scrolled .nav-link {
+            color: #E9EFEC;
+        }
+            
+        
+        .navbar-nav .nav-item {
+            margin-right: 17px; /* Memberikan jarak antar item */
+        }
+
+        .navbar-nav .nav-item:last-child {
+            margin-right: 0; /* Menghilangkan margin pada item terakhir */
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='red' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
         .custom-card {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
+            background-color: #EEEEEE;
+            border: 10px solid #ddd;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px #0000001a;
         }
         .carousel-item img {
-            height: 400px;
+            height: 450px;
             object-fit: cover;
         }
         .carousel-item {
@@ -43,21 +101,7 @@
         .carousel-caption p {
           font-size: 1.2rem;
         }
-        .navbar-transparent {
-            background-color: rgba(255, 255, 255, 0.5); /* Transparan */
-            transition: background-color 0.3s ease; /* Animasi transisi */
-        }
-
-        .navbar-solid {
-            background-color: rgba(255, 255, 255, 1); /* Warna solid */
-            transition: background-color 0.3s ease; /* Animasi transisi */
-        }
-        .navbar-nav .nav-item {
-            margin-right: 15px; /* Memberikan jarak antar item */
-        }
-        .navbar-nav .nav-item:last-child {
-            margin-right: 0; /* Menghilangkan margin pada item terakhir */
-        }
+        
         .gallery-item {
             margin-bottom: 30px;
             transition: transform 0.3s ease;
@@ -67,27 +111,19 @@
         }
         .gallery-img {
             width: 100%;
-            height: 250px;
+            /* height: 250px; */
             object-fit: cover;
             border-radius: 8px;
         }
         .section-title {
             position: relative;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #dc3545;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            margin-top: 60px;
         }
         .map-container iframe {
             width: 100%;
-            height: 450px;
+            height: 550px;
             border: none;
         }
         footer {
@@ -95,7 +131,7 @@
         }
 
         .footer-container {
-            background: linear-gradient(to right, #f02b2b, #ff6b6b);
+            background:#347928;
             padding: 2rem;
             color: white;
             font-family: Arial, sans-serif;
@@ -127,7 +163,6 @@
         }
 
         .footer-heading {
-            font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 1rem;
         }
@@ -154,47 +189,47 @@
 
     </style>
 </head>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-          <!-- Foto di kiri dan teks di samping -->
-          <a class="navbar-brand d-flex align-items-" href="/">
-            <img src="{{ asset('image/logo sambas.png') }}" alt="logo" 
-              alt="Logo" style="width: 80px; height: 75px; object-fit: cover; margin-right: 10px;">
-            <div>
-              <h1 class="m-2" style="font-size: 18px; font-weight: bold;">Desa Penjajap</h1>
-              <h4 class="m-2" style="font-size: 13px;">Kabupaten Sambas</h4>
-            </div>
-          </a>
-      
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <!-- Merapikan navbar ke tengah -->
-            <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/profil-desa">Profil Desa</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/infografis">Infografis</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/peta-desa">Peta Desa</a>
-              </li>
-            </ul>
-          
-          </div>
+<nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
+    <div class="container-fluid">
+      <!-- Foto di kiri dan teks di samping -->
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="{{ asset('image/logo sambas.png') }}" alt="logo" 
+          style="width: 80px; height: 75px; object-fit: cover;">
+        <div class="nav-tittle">
+          <h1 class="mt-1" style="font-size:25px; font-weight: 1000;">Desa Penjajap</h1>
+          <h4 class="mt-1" style="font-size: 12px;">Kabupaten Sambas</h4>
         </div>
-      </nav>
+      </a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarScroll" style="">
+        <!-- Merapikan navbar ke tengah -->
+        <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height:100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profil-desa">Profil Desa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/infografis">Infografis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/peta-desa">Peta Desa</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
       
       <!-- Menambahkan padding-top yang lebih besar agar konten tidak tertutup -->
-      <div class="container mt-5 pt-5" style="padding-top: 120px;">
-        <h2 class="text-center mb-2 mt-4">Selamat Datang di Website Desa Penjajap</h2>
-        <h3 class="text-center mb-3">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</h3>
+      <div class="container mt-5" style="padding-top: 10px;">
+        <p class="text-center mb-1 mt-5 font-weight-bold" style="color: #347928; font-size:30px;">Selamat Datang di Website Desa Penjajap</p>
+        <p class="text-center mb-3" style="font-size: 14px; color:#4A4947;">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</p>
         <!-- Konten lainnya di sini -->
       </div>
       
@@ -209,24 +244,24 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="carousel-caption">
-                <h2>Title for Image 1</h2>
+                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/infografis">Desa Penjajap</a></h2>
                 <p>Description for Image 1</p>
             </div>
-            <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Image 1">
+            <img src="{{ asset('image/foto1.png') }}" class="d-block w-100" alt="Image 1">
         </div>
         <div class="carousel-item">
             <div class="carousel-caption">
-                <h2>Title for Image 2</h2>
+                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/peta-desa"> Website Resmi Desa Penjajap </a></h2>
                 <p>Description for Image 2</p>
             </div>
-            <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Image 2">
+            <img src="{{ asset('image/foto2.png') }}" class="d-block w-100" alt="Image 2">
         </div>
         <div class="carousel-item">
             <div class="carousel-caption">
-                <h2>Title for Image 3</h2>
+                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/profil-desa"> Website Resmi Desa Penjajap </a></h2>
                 <p>Description for Image 3</p>
             </div>
-            <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Image 3">
+            <img src="{{ asset('image/foto3.png') }}" class="d-block w-100" alt="Image 3">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -242,19 +277,16 @@
 <!-- Main Content -->
 <div class="container mt-5">
   <div class="row align-items-center">
-      <div class="col-md-4 text-center">
-        <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Kabupaten" style="width: 380px; height: 200px;">
-
-
+      <div class="col-md-4  text-center" style="margin-top: 50px;">
+        <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Kabupaten" style="width: 380px; height: 200px; margin-left:-120px;">
       </div>
-      <div class="col-md-8">
-          <h1 class="text-success mb-1">Sambutan Kepala Desa</h1>
-          <h2 class="mb-1">JUMADI</h2>
-          <h5 class="text-muted mb-4">Kepala Desa Kersik</h5>
+      <div class="col-md-9" style="margin-left: 270px; margin-top: -200px; border-left: 1px solid black; padding-left:50px;">
+          <h1 class="font-weight-bold mb-3" style="color: #347928">Sambutan Kepala Desa</h1>
+          <h3 class="mb-1" style="color: #434343; font-weight:600;">RUDIANSYAH</h3>
+          <h5 class="text-muted mb-4" style="font-size: 16px;">Kepala Desa Penjajap</h5>
           
           <p class="mb-0">Assalamualaikum Warahmatullahi Wabarakatuh.</p>
-          
-          <p class="mb-4">Website ini hadir sebagai wujud transformasi desa Kersik menjadi desa yang 
+          <p class="mb-4" style="text-align:justify;">Website ini hadir sebagai wujud transformasi desa Kersik menjadi desa yang 
           mampu memanfaatkan teknologi informasi dan komunikasi, terintegrasi kedalam sistem online. 
           Keterbukaan informasi publik, pelayanan publik dan kegiatan perekonomian di desa, 
           guna mewujudkan desa Kersik sebagai desa wisata yang berkelanjutan, adaptasi dan 
@@ -273,63 +305,64 @@
 
     <!-- Card Section -->
     
-<h2 class="mt-5">SOTK</h2>
-<h4>Struktur Organisasi dan Tata Kerja Desa Penjajap</h4>
+<p class="mt-5 mb-0 text-center" style="text-decoration:underline; padding-top: 50px; font-size:35px; color:#347928; font-weight:bolder;">SOTP</p>
+<p class="text-center" style="font-size:18px; color:#4A4947;">Struktur Organisasi dan Tata Kerja Desa Penjajap</p>
 
 <div class="container mt-4">
     <div class="row justify-content-center">
         <!-- Card 1 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Image 1">
-                <h5>Nama Foto 1</h5>
-                <p>This is a simple card with custom style applied using inline CSS.</p>
+                <img src="{{ asset('image/kades.png') }}" class="img-fluid mb-3" alt="Image 1" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;">Kepala Desa</h5>
+                <p>Rudiansyah</p>
             </div>
         </div>
         <!-- Card 2 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Image 2">
-                <h5>Nama Foto 2</h5>
-                <p>This is another card with custom styling applied.</p>
+                <img src="{{ asset('image/kades2.png') }}" class="img-fluid mb-3" alt="Image 2" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;">Kepala Sekretariat Desa</h5>
+                <p>Budi Hartono</p>
             </div>
         </div>
         <!-- Card 3 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Image 3">
-                <h5>Nama Foto 3</h5>
-                <p>This is the third card with similar style as the others.</p>
+                <img src="{{ asset('image/kades3.png') }}" class="img-fluid mb-3" alt="Image 3" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;"> Perangkat Desa</h5>
+                <p>Kaur Keuangan</p>
             </div>
         </div>
         <!-- Card 4 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="https://via.placeholder.com/150" class="img-fluid mb-3" alt="Image 4">
-                <h5>Nama Foto 4</h5>
-                <p>This is the fourth card with similar style as the others.</p>
+                <img src="{{ asset('image/kades4.png') }}" class="img-fluid mb-3" alt="Image 4" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;">Kaur Pemerintahan</h5>
+                <p>Ranri Kurnia</p>
             </div>
         </div>
     </div>
 </div>
 
-<h3 class="mt-5">Peta Desa Penjajap</h3>
+<p class="text-center" style="color:#347928; font-weight:bold; margin-top:100px; margin-bottom:10px; font-size:32px; text-decoration:underline;">Peta Desa Penjajap</p>
+<p style="text-align:center; font-size:18px; color:#4A4947; ">Menampilkan Peta Desa Dengan Desa Dengan Interest Point Desa Penjajap</p>
 <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
-    width="350" 
-    height="350" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
+    width="100%" 
+    height="600px" 
+    frameborder="0" 
+    style="border: 0;" 
+    allowfullscreen>
 </iframe>
 </div>
 
 <div class="container py-5">
   <div class="row">
       <div class="col-12">
-          <h2 class="section-title">GALERI DESA</h2>
-          <p class="text-muted mb-4">Menampilkan kegiatan-kegiatan yang berlangsung di desa</p>
+          <p class="mb-0 text-center" style=" margin-top:0px; text-decoration:underline; padding-top: 10px; font-size:36px; color:#347928; font-weight:bolder;">Galeri Desa</p>
+          <p class="mb-5" style="margin-top:5px; margin-left:2px; color:#4A4947; font-size:16px; text-align:center;">Menampilkan kegiatan-kegiatan yang berlangsung di desa</p>
       </div>
   </div>
 
@@ -337,10 +370,10 @@
       <!-- Gallery Item 1 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="makan-bersama.jpg" class="gallery-img" alt="Kegiatan Makan Bersama">
+              <img src="{{ asset('image/foto4.png') }}" class="gallery-img" alt="Kegiatan Makan Bersama">
               <div class="card-body">
-                  <h5 class="card-title">Kegiatan Masyarakat</h5>
-                  <p class="card-text text-muted">Makan bersama dalam rangka gotong royong desa</p>
+                  <h5 class="card-title">Penyebrangan Masyarakat</h5>
+                  <p class="card-text text-muted">Penyebrangan masyarakat di pelabuhan penjajap</p>
               </div>
           </div>
       </div>
@@ -348,10 +381,10 @@
       <!-- Gallery Item 2 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="pelatihan.jpg" class="gallery-img" alt="Pelatihan">
+              <img src="{{ asset('image/foto5.png') }}" class="gallery-img" alt="Pelatihan">
               <div class="card-body">
-                  <h5 class="card-title">Pelatihan TNI</h5>
-                  <p class="card-text text-muted">Kegiatan pelatihan bersama TNI</p>
+                  <h5 class="card-title">Pertemuan Warga</h5>
+                  <p class="card-text text-muted">Pertemuan Rutin Yang Dilakukan Oleh Warga Desa Penjajap</p>
               </div>
           </div>
       </div>
@@ -359,10 +392,10 @@
       <!-- Gallery Item 3 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="olahraga.jpg" class="gallery-img" alt="Olahraga">
+              <img src="{{asset ('image/foto6.png')}}" class="gallery-img" alt="Olahraga">
               <div class="card-body">
-                  <h5 class="card-title">Kegiatan Olahraga</h5>
-                  <p class="card-text text-muted">Pertandingan olahraga antar warga</p>
+                  <h5 class="card-title">Tempat Pelelangan Ikan</h5>
+                  <p class="card-text text-muted">Tempat Pelelangan Ikan Yang Ada di Desa Penjajap</p>
               </div>
           </div>
       </div>
@@ -370,7 +403,7 @@
       <!-- Gallery Item 4 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="musrenbang.jpg" class="gallery-img" alt="Musrenbang">
+              <img src="{{asset ('image/foto7.png')}}" class="gallery-img" alt="Musrenbang">
               <div class="card-body">
                   <h5 class="card-title">Musrenbang Desa</h5>
                   <p class="card-text text-muted">Musyawarah Perencanaan Pembangunan Desa</p>
@@ -381,7 +414,7 @@
       <!-- Gallery Item 5 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="pertemuan.jpg" class="gallery-img" alt="Pertemuan Warga">
+              <img src="{{asset ('image/foto9.png')}}" class="gallery-img" alt="Pertemuan Warga">
               <div class="card-body">
                   <h5 class="card-title">Pertemuan Warga</h5>
                   <p class="card-text text-muted">Pertemuan rutin warga desa</p>
@@ -392,7 +425,7 @@
       <!-- Gallery Item 6 -->
       <div class="col-md-4 gallery-item">
           <div class="card border-0 shadow-sm">
-              <img src="kunjungan.jpg" class="gallery-img" alt="Kunjungan Tim">
+              <img src="{{asset ('image/foto10.png')}}" class="gallery-img" alt="Kunjungan Tim">
               <div class="card-body">
                   <h5 class="card-title">Kunjungan Tim Juri</h5>
                   <p class="card-text text-muted">Kunjungan tim penilai ke desa</p>
@@ -404,38 +437,44 @@
 
 <footer class="footer-container">
   <div class="footer-content">
-      <div class="footer-logo">
+      <div class="footer-logo" style="border-right: 1px solid white;">
           <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Desa Penjajap">
-          <h3>Desa Penjajap</h3>
-          <p>Kecamatan Pemangkat<br>
+          <h3 style="margin-left:30px; font-weight:bolder;">Desa Penjajap</h3>
+          <p style="margin-left:30px; font-size:14px;">Kecamatan Pemangkat<br>
           Kabupaten Sambas<br>
           Provinsi Kalimantan Barat</p>
       </div>
       
       <div class="contact-info">
-          <h4 class="footer-heading">Kontak Desa</h4>
-          <p>082150208664</p>
-          <p>kersik.marangkayu@kukarkab.go.i</p>
-          <p>Senin - Kamis (08.00 - 15.00) &<br>
-          Jum'at (08.00 - 11.00)</p>
-          <p>Jalan Langaseng Dusun Empang<br>
-          RT.003</p>
+          <h4 class="footer-heading" style="font-size: 26px; font-weight:bold">Kontak Desa</h4>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Telepon Desa</p>
+            <p style="font-size: 15px;">123456789</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Email Desa</p>
+            <p style="font-size: 15px;">desapenjajap@gmail.com</p>
+          <p style="font-size: 18px; ">Senin - Kamis (08.00 - 15.00) &<br>
+            Jum'at (08.00 - 11.00)</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Alamat Desa </p>
+            <p style="font-size: 15px;"> Raya Desa Penjajap</p>
       </div>
 
       <div class="phone-numbers">
-          <h4 class="footer-heading">Nomor Telepon Penting</h4>
-          <p>Jumadi/Kades Kersik<br>
-          08124236847</p>
-          <p>Yayan/Ambulan Kersik<br>
-          085392095123</p>
+          <h4 class="footer-heading" style="font-size: 24px; font-weight:bold">Nomor Telepon Penting</h4>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Kades</p>
+            <p style="font-size: 15px;">08124236848</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Ambulan Penjajap</p>
+            <p style="font-size: 15px;">085392095123</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Polisi</p>
+            <p style="font-size: 15px;">08123456789</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Pemadam Kebakaran</p>
+            <p style="font-size: 15px;">08123456789</p>
       </div>
 
-      <div class="links">
-          <h4 class="footer-heading">Jelajahi</h4>
-          <a href="#" style="color: white; text-decoration: none;">Website Kemendesa</a>
-          <a href="#" style="color: white; text-decoration: none;">Website Kemendagri</a>
-          <a href="#" style="color: white; text-decoration: none;">Website Kabupaten Kutai Kartanegara</a>
-          <a href="#" style="color: white; text-decoration: none;">Cek DPT Online</a>
+      <div class="links" style="margin-left: 50px;">
+          <h4 class="footer-heading" style="font-size: 26px; font-weight:bold;">Jelajahi</h4>
+          <a href="https://kemendesa.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kemendesa</a>
+          <a href="https://kemendagri.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kemendagri</a>
+          <a href="https://kalbarprov.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kalimantan Barat</a>
+          <a href="https://bkpsdmad.sambas.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kabupaten Sambas</a>
       </div>
   </div>
 
@@ -450,19 +489,27 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".navbar");
+  const navbar = document.querySelector(".navbar");
+  const navTitle = document.querySelector(".nav-tittle");
+  const navLink = document.querySelector(".navbar");
 
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 50) { // Jika halaman digulir lebih dari 50px
-        navbar.classList.remove("navbar-light", "bg-light");
-        navbar.classList.add("navbar-transparent");
-      } else {
-        navbar.classList.remove("navbar-transparent");
-        navbar.classList.add("navbar-light", "bg-light");
-      }
-    });
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) { // Jika halaman digulir lebih dari 50px
+      navbar.classList.remove("navbar-transparent");
+      navbar.classList.add("navbar-solid");
+      navTitle.classList.add("scrolled");
+      navLink.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("navbar-solid");
+      navbar.classList.add("navbar-transparent");
+      navTitle.classList.remove("scrolled");
+      navLink.classList.remove("scrolled");
+    }
   });
+});
 </script>
+
+
 
 </body>
 </html>
