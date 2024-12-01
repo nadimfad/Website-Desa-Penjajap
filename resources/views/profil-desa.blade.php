@@ -221,17 +221,16 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <h3 class="card-title mb-4">VISI</h3>
-                            <p class="card-text">"Desa Kersik sebagai Desa Wisata yang mampu mengelola potensi Desa dan pembangunan berkelanjutan untuk mewujudkan masyarakat yang sejahtera"</p>
+                            <p class="card-text">{{$profiles->visi_misi}}</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title mb-4">MISI</h3>
                             <ol class="list-group list-group-flush list-group-numbered">
-                                <li class="list-group-item">Mewujudkan tata kelola pemerintahan yang baik</li>
-                                <li class="list-group-item">Mengembangkan kegiatan keagamaan</li>
-                                <li class="list-group-item">Meningkatkan kualitas pendidikan dan sumber daya manusia</li>
-
+                                @foreach ($missions as $m)
+                                <li class="list-group-item">{{$m->mission}}</li>
+                                @endforeach
                             </ol>
                         </div>
                     </div>
