@@ -270,7 +270,7 @@
       </div>
       <div class="col-md-9" style="margin-left: 270px; margin-top: -200px; border-left: 1px solid black; padding-left:50px;">
           <h1 class="font-weight-bold mb-3" style="color: #347928">Sambutan Kepala Desa</h1>
-          <h3 class="mb-1" style="color: #434343; font-weight:600;">{{$sambutans->name}}</h3>
+          <h3 class="mb-1" style="color: #434343; font-weight:600;">{{$sambutans?->name}}</h3>
           <h5 class="text-muted mb-4" style="font-size: 16px;">Kepala Desa Penjajap</h5>
           
           <p class="mb-0">Assalamualaikum Warahmatullahi Wabarakatuh.</p>
