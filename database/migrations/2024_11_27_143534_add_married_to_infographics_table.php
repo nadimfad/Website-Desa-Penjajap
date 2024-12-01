@@ -12,12 +12,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('infographics', function (Blueprint $table) {
-            $table->integer('belum_kawin')->nullable(); // Jumlah pelajar
-            $table->integer('kawin')->nullable(); // Jumlah belum bekerja
-            $table->integer('cerai_mati')->nullable(); // Jumlah ibu rumah tangga
-            $table->integer('kawin_tercatat')->nullable(); // Jumlah karyawan swasta
-            $table->integer('kawin_tidak_tercatat')->nullable(); // Jumlah nelayan
-            $table->integer('cerai_hidup')->nullable(); // Jumlah petani
+            $table->integer('belum_kawin')->nullable()->change(); // Jumlah pelajar
+            $table->integer('kawin')->nullable()->change(); // Jumlah belum bekerja
+            $table->integer('cerai_mati')->nullable()->change(); // Jumlah ibu rumah tangga
+            $table->integer('kawin_tercatat')->nullable()->change(); // Jumlah karyawan swasta
+            $table->integer('kawin_tidak_tercatat')->nullable()->change(); // Jumlah nelayan
+            $table->integer('cerai_hidup')->nullable()->change(); // Jumlah petani
         });
     }
     

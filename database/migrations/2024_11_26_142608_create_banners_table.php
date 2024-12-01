@@ -15,7 +15,7 @@ return new class extends Migration
         $table->id();
         $table->string('title');  // Kolom untuk judul
         $table->text('description');  // Kolom untuk deskripsi
-        $table->string('photo');  // Kolom untuk foto (path)
+        $table->string('photo')->nullable();  // Kolom untuk foto (path)
         $table->timestamps();
     });
 }

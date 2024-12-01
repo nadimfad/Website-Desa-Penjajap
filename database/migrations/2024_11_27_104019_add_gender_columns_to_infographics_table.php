@@ -12,8 +12,8 @@ return new class extends Migration
     public function up()
 {
     Schema::table('infographics', function (Blueprint $table) {
-        $table->integer('female')->nullable();
-        $table->integer('male')->nullable();
+        $table->integer('female')->nullable()->change();
+        $table->integer('male')->nullable()->change();
     });
 }
 
