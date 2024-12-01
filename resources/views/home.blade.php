@@ -10,7 +10,7 @@
     <!-- Custom CSS -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         .nav-tittle {
@@ -131,7 +131,7 @@
         }
 
         .footer-container {
-            background: linear-gradient(to right, green, #61b14b);
+            background:#347928;
             padding: 2rem;
             color: white;
             font-family: Arial, sans-serif;
@@ -163,7 +163,6 @@
         }
 
         .footer-heading {
-            font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 1rem;
         }
@@ -195,10 +194,10 @@
       <!-- Foto di kiri dan teks di samping -->
       <a class="navbar-brand d-flex align-items-center" href="/">
         <img src="{{ asset('image/logo sambas.png') }}" alt="logo" 
-          style="width: 80px; height: 75px; object-fit: cover; margin-right: 10px;">
+          style="width: 80px; height: 75px; object-fit: cover;">
         <div class="nav-tittle">
-          <h1 class="m-2" style="font-size:20px; font-weight: bold;">Desa Penjajap</h1>
-          <h4 class="m-2" style="font-size: 15px;">Kabupaten Sambas</h4>
+          <h1 class="mt-1" style="font-size:25px; font-weight: 1000;">Desa Penjajap</h1>
+          <h4 class="mt-1" style="font-size: 12px;">Kabupaten Sambas</h4>
         </div>
       </a>
   
@@ -206,7 +205,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
   
-      <div class="collapse navbar-collapse" id="navbarScroll">
+      <div class="collapse navbar-collapse" id="navbarScroll" style="">
         <!-- Merapikan navbar ke tengah -->
         <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height:100px;">
           <li class="nav-item">
@@ -228,9 +227,9 @@
   
       
       <!-- Menambahkan padding-top yang lebih besar agar konten tidak tertutup -->
-      <div class="container mt-5 pt-5" style="padding-top: 120px;">
-        <p class="text-center mb-2 mt-5 font-weight-bold" style="color: #347928; font-size:36px;">Selamat Datang di Website Desa Penjajap</p>
-        <p class="text-center mb-3" style="font-size: 24px; color:#4A4947;">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</p>
+      <div class="container mt-5" style="padding-top: 10px;">
+        <p class="text-center mb-1 mt-5 font-weight-bold" style="color: #347928; font-size:30px;">Selamat Datang di Website Desa Penjajap</p>
+        <p class="text-center mb-3" style="font-size: 14px; color:#4A4947;">Sumber Informasi Tentang Pemerintahan di Desa Penjajap</p>
         <!-- Konten lainnya di sini -->
       </div>
       
@@ -245,21 +244,21 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="carousel-caption">
-                <h2>Title for Image 1</h2>
+                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/infografis">Desa Penjajap</a></h2>
                 <p>Description for Image 1</p>
             </div>
             <img src="{{ asset('image/foto1.png') }}" class="d-block w-100" alt="Image 1">
         </div>
         <div class="carousel-item">
             <div class="carousel-caption">
-                <h2>Title for Image 2</h2>
+                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/peta-desa"> Website Resmi Desa Penjajap </a></h2>
                 <p>Description for Image 2</p>
             </div>
             <img src="{{ asset('image/foto2.png') }}" class="d-block w-100" alt="Image 2">
         </div>
         <div class="carousel-item">
             <div class="carousel-caption">
-                <h2>Title for Image 3</h2>
+                <h2><a style="font-size: 36px; text-decoration:none; color:#ffffff; font-weight:bold;" href="/profil-desa"> Website Resmi Desa Penjajap </a></h2>
                 <p>Description for Image 3</p>
             </div>
             <img src="{{ asset('image/foto3.png') }}" class="d-block w-100" alt="Image 3">
@@ -278,19 +277,16 @@
 <!-- Main Content -->
 <div class="container mt-5">
   <div class="row align-items-center">
-      <div class="col-md-4 text-center">
-        <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Kabupaten" style="width: 380px; height: 200px;">
-
-
+      <div class="col-md-4  text-center" style="margin-top: 50px;">
+        <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Kabupaten" style="width: 380px; height: 200px; margin-left:-120px;">
       </div>
-      <div class="col-md-8">
-          <h1 class="font-weight-bold" style="color: #347928">Sambutan Kepala Desa</h1>
-          <h3 class="mb-1" style="color: #4A4947">JUMADI</h3>
-          <h5 class="text-muted mb-4">Kepala Desa Kersik</h5>
+      <div class="col-md-9" style="margin-left: 270px; margin-top: -200px; border-left: 1px solid black; padding-left:50px;">
+          <h1 class="font-weight-bold mb-3" style="color: #347928">Sambutan Kepala Desa</h1>
+          <h3 class="mb-1" style="color: #434343; font-weight:600;">RUDIANSYAH</h3>
+          <h5 class="text-muted mb-4" style="font-size: 16px;">Kepala Desa Penjajap</h5>
           
           <p class="mb-0">Assalamualaikum Warahmatullahi Wabarakatuh.</p>
-          
-          <p class="mb-4">Website ini hadir sebagai wujud transformasi desa Kersik menjadi desa yang 
+          <p class="mb-4" style="text-align:justify;">Website ini hadir sebagai wujud transformasi desa Kersik menjadi desa yang 
           mampu memanfaatkan teknologi informasi dan komunikasi, terintegrasi kedalam sistem online. 
           Keterbukaan informasi publik, pelayanan publik dan kegiatan perekonomian di desa, 
           guna mewujudkan desa Kersik sebagai desa wisata yang berkelanjutan, adaptasi dan 
@@ -309,48 +305,48 @@
 
     <!-- Card Section -->
     
-<p class="mt-5 mb-0" style="padding-top: 50px; margin-left:70px; font-size:35px; color:#347928; font-weight:bolder; ">SOTK</p>
-<p style="margin-left: 70px; font-size:22px; color:#4A4947;">Struktur Organisasi dan Tata Kerja Desa Penjajap</p>
+<p class="mt-5 mb-0 text-center" style="text-decoration:underline; padding-top: 50px; font-size:35px; color:#347928; font-weight:bolder;">SOTP</p>
+<p class="text-center" style="font-size:18px; color:#4A4947;">Struktur Organisasi dan Tata Kerja Desa Penjajap</p>
 
 <div class="container mt-4">
     <div class="row justify-content-center">
         <!-- Card 1 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="{{ asset('image/kades.png') }}" class="img-fluid mb-3" alt="Image 1" style= "height:200px;">
-                <h5>Kepala Desa</h5>
+                <img src="{{ asset('image/kades.png') }}" class="img-fluid mb-3" alt="Image 1" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;">Kepala Desa</h5>
                 <p>Rudiansyah</p>
             </div>
         </div>
         <!-- Card 2 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="{{ asset('image/kades2.png') }}" class="img-fluid mb-3" alt="Image 2" style= "height:200px;">
-                <h5>Kepala Sekretariat Desa</h5>
+                <img src="{{ asset('image/kades2.png') }}" class="img-fluid mb-3" alt="Image 2" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;">Kepala Sekretariat Desa</h5>
                 <p>Budi Hartono</p>
             </div>
         </div>
         <!-- Card 3 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="{{ asset('image/kades3.png') }}" class="img-fluid mb-3" alt="Image 3" style= "height:200px;">
-                <h5> Perangkat Desa</h5>
+                <img src="{{ asset('image/kades3.png') }}" class="img-fluid mb-3" alt="Image 3" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;"> Perangkat Desa</h5>
                 <p>Kaur Keuangan</p>
             </div>
         </div>
         <!-- Card 4 -->
         <div class="col-md-3">
             <div class="custom-card p-4 border d-flex flex-column align-items-center">
-                <img src="{{ asset('image/kades4.png') }}" class="img-fluid mb-3" alt="Image 4" style= "height:200px;">
-                <h5>Kaur Pemerintahan</h5>
+                <img src="{{ asset('image/kades4.png') }}" class="img-fluid mb-3" alt="Image 4" style= "height:200px; border: 1px solid rgb(109, 109, 109); border-radius:10px;">
+                <h5 style="font-weight: 800; font-size:18px;">Kaur Pemerintahan</h5>
                 <p>Ranri Kurnia</p>
             </div>
         </div>
     </div>
 </div>
 
-<h3 class="mt-5" style="margin-left: 70px; color:#347928; font-weight:bold; ">Peta Desa Penjajap</h3>
-<p style="margin-left: 70px; font-size:18px; color:#4A4947; ">Menampilkan Peta Desa Dengan Desa Dengan Interest Point Desa Penjajap</p>
+<p class="text-center" style="color:#347928; font-weight:bold; margin-top:100px; margin-bottom:10px; font-size:32px; text-decoration:underline;">Peta Desa Penjajap</p>
+<p style="text-align:center; font-size:18px; color:#4A4947; ">Menampilkan Peta Desa Dengan Desa Dengan Interest Point Desa Penjajap</p>
 <div class="map-container">
     <iframe 
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12153.866873453797!2d108.97384167364818!3d1.187490384077525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e48325dc3b5689%3A0x9d98909ee32ca45c!2sPenjajap%2C%20Kec.%20Pemangkat%2C%20Kabupaten%20Sambas%2C%20Kalimantan%20Barat!5e1!3m2!1sid!2sid!4v1732296728087!5m2!1sid!2sid" 
@@ -365,8 +361,8 @@
 <div class="container py-5">
   <div class="row">
       <div class="col-12">
-          <p class=" font-weight-bold section-title" style="color:#347928; font-size:30px;">GALERI DESA</p>
-          <p class="mb-5" style="margin-top:5px; margin-left:2px; color:#4A4947; font-size:18px;">Menampilkan kegiatan-kegiatan yang berlangsung di desa</p>
+          <p class="mb-0 text-center" style=" margin-top:0px; text-decoration:underline; padding-top: 10px; font-size:36px; color:#347928; font-weight:bolder;">Galeri Desa</p>
+          <p class="mb-5" style="margin-top:5px; margin-left:2px; color:#4A4947; font-size:16px; text-align:center;">Menampilkan kegiatan-kegiatan yang berlangsung di desa</p>
       </div>
   </div>
 
@@ -441,44 +437,44 @@
 
 <footer class="footer-container">
   <div class="footer-content">
-      <div class="footer-logo">
+      <div class="footer-logo" style="border-right: 1px solid white;">
           <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Desa Penjajap">
-          <h3>Desa Penjajap</h3>
-          <p>Kecamatan Pemangkat<br>
+          <h3 style="margin-left:30px; font-weight:bolder;">Desa Penjajap</h3>
+          <p style="margin-left:30px; font-size:14px;">Kecamatan Pemangkat<br>
           Kabupaten Sambas<br>
           Provinsi Kalimantan Barat</p>
       </div>
       
       <div class="contact-info">
-          <h4 class="footer-heading">Kontak Desa</h4>
-          <p>Nomor Telepon Desa <br>
-          123456789</p>
-          <p>Email Desa<br>
-          desapenjajap@gmail.com</p>
-          <p>Senin - Kamis (08.00 - 15.00) &<br>
-          Jum'at (08.00 - 11.00)</p>
-          <p>Alamat Desa <br>
-          Jl. Raya Desa Penjajap</p>
+          <h4 class="footer-heading" style="font-size: 26px; font-weight:bold">Kontak Desa</h4>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Telepon Desa</p>
+            <p style="font-size: 15px;">123456789</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Email Desa</p>
+            <p style="font-size: 15px;">desapenjajap@gmail.com</p>
+          <p style="font-size: 18px; ">Senin - Kamis (08.00 - 15.00) &<br>
+            Jum'at (08.00 - 11.00)</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Alamat Desa </p>
+            <p style="font-size: 15px;"> Raya Desa Penjajap</p>
       </div>
 
       <div class="phone-numbers">
-          <h4 class="footer-heading">Nomor Telepon Penting</h4>
-          <p>Nomor Kades<br>
-          08124236848</p>
-          <p>Nomor Ambulan Penjajap<br>
-          085392095123</p>
-          <p>Nomor Polisi<br>
-          08123456789</p>
-          <p>Nomor Pemadam Kebakaran<br>
-          08123456789</p>
+          <h4 class="footer-heading" style="font-size: 24px; font-weight:bold">Nomor Telepon Penting</h4>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Kades</p>
+            <p style="font-size: 15px;">08124236848</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Ambulan Penjajap</p>
+            <p style="font-size: 15px;">085392095123</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Polisi</p>
+            <p style="font-size: 15px;">08123456789</p>
+          <p style="font-size: 18px; margin-bottom:-7px;">Nomor Pemadam Kebakaran</p>
+            <p style="font-size: 15px;">08123456789</p>
       </div>
 
-      <div class="links">
-          <h4 class="footer-heading">Jelajahi</h4>
-          <a href="https://kemendesa.go.id/" style="color: white; text-decoration: none;">Website Kemendesa</a>
-          <a href="https://kemendagri.go.id/" style="color: white; text-decoration: none;">Website Kemendagri</a>
-          <a href="https://kalbarprov.go.id/" style="color: white; text-decoration: none;">Website Kalimantan Barat</a>
-          <a href="https://bkpsdmad.sambas.go.id/" style="color: white; text-decoration: none;">Website Kabupaten Sambas</a>
+      <div class="links" style="margin-left: 50px;">
+          <h4 class="footer-heading" style="font-size: 26px; font-weight:bold;">Jelajahi</h4>
+          <a href="https://kemendesa.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kemendesa</a>
+          <a href="https://kemendagri.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kemendagri</a>
+          <a href="https://kalbarprov.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kalimantan Barat</a>
+          <a href="https://bkpsdmad.sambas.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kabupaten Sambas</a>
       </div>
   </div>
 

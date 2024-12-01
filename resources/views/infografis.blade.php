@@ -9,7 +9,7 @@
     <!-- Custom CSS -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             padding-top: 70px; /* Untuk menghindari navbar fixed-top menutupi konten */
         }
         .nav-tittle {
@@ -137,7 +137,7 @@
         }
 
         .footer-container {
-            background: linear-gradient(to right, green, #61b14b);
+            background: #347928;
             padding: 2rem;
             color: white;
             font-family: Arial, sans-serif;
@@ -537,46 +537,47 @@
   </div>
 </div>
 
+{{-- footer --}}
 <footer class="footer-container">
     <div class="footer-content">
-        <div class="footer-logo">
+        <div class="footer-logo" style="border-right: 1px solid white;">
             <img src="{{ asset('image/logo sambas.png') }}" alt="Logo Desa Penjajap">
-            <h3>Desa Penjajap</h3>
-            <p>Kecamatan Pemangkat<br>
+            <h3 style="margin-left:30px; font-weight:bolder;">Desa Penjajap</h3>
+            <p style="margin-left:30px; font-size:14px;">Kecamatan Pemangkat<br>
             Kabupaten Sambas<br>
             Provinsi Kalimantan Barat</p>
         </div>
         
         <div class="contact-info">
-            <h4 class="footer-heading">Kontak Desa</h4>
-            <p>Nomor Telepon Desa <br>
-            123456789</p>
-            <p>Email Desa<br>
-            desapenjajap@gmail.com</p>
-            <p>Senin - Kamis (08.00 - 15.00) &<br>
-            Jum'at (08.00 - 11.00)</p>
-            <p>Alamat Desa <br>
-            Jl. Raya Desa Penjajap</p>
+            <h4 class="footer-heading" style="font-size: 26px; font-weight:bold">Kontak Desa</h4>
+            <p style="font-size: 18px; margin-bottom:-7px;">Nomor Telepon Desa</p>
+              <p style="font-size: 15px;">123456789</p>
+            <p style="font-size: 18px; margin-bottom:-7px;">Email Desa</p>
+              <p style="font-size: 15px;">desapenjajap@gmail.com</p>
+            <p style="font-size: 18px; ">Senin - Kamis (08.00 - 15.00) &<br>
+              Jum'at (08.00 - 11.00)</p>
+            <p style="font-size: 18px; margin-bottom:-7px;">Alamat Desa </p>
+              <p style="font-size: 15px;"> Raya Desa Penjajap</p>
         </div>
   
         <div class="phone-numbers">
-            <h4 class="footer-heading">Nomor Telepon Penting</h4>
-            <p>Nomor Kades<br>
-            08124236848</p>
-            <p>Nomor Ambulan Penjajap<br>
-            085392095123</p>
-            <p>Nomor Polisi<br>
-            08123456789</p>
-            <p>Nomor Pemadam Kebakaran<br>
-            08123456789</p>
+            <h4 class="footer-heading" style="font-size: 24px; font-weight:bold">Nomor Telepon Penting</h4>
+            <p style="font-size: 18px; margin-bottom:-7px;">Nomor Kades</p>
+              <p style="font-size: 15px;">08124236848</p>
+            <p style="font-size: 18px; margin-bottom:-7px;">Nomor Ambulan Penjajap</p>
+              <p style="font-size: 15px;">085392095123</p>
+            <p style="font-size: 18px; margin-bottom:-7px;">Nomor Polisi</p>
+              <p style="font-size: 15px;">08123456789</p>
+            <p style="font-size: 18px; margin-bottom:-7px;">Nomor Pemadam Kebakaran</p>
+              <p style="font-size: 15px;">08123456789</p>
         </div>
   
-        <div class="links">
-            <h4 class="footer-heading">Jelajahi</h4>
-            <a href="https://kemendesa.go.id/" style="color: white; text-decoration: none;">Website Kemendesa</a>
-            <a href="https://kemendagri.go.id/" style="color: white; text-decoration: none;">Website Kemendagri</a>
-            <a href="https://kalbarprov.go.id/" style="color: white; text-decoration: none;">Website Kalimantan Barat</a>
-            <a href="https://bkpsdmad.sambas.go.id/" style="color: white; text-decoration: none;">Website Kabupaten Sambas</a>
+        <div class="links" style="margin-left: 50px;">
+            <h4 class="footer-heading" style="font-size: 26px; font-weight:bold;">Jelajahi</h4>
+            <a href="https://kemendesa.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kemendesa</a>
+            <a href="https://kemendagri.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kemendagri</a>
+            <a href="https://kalbarprov.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kalimantan Barat</a>
+            <a href="https://bkpsdmad.sambas.go.id/" style="color: white; margin-bottom:10px; font-size:18px; text-decoration: none;">Website Kabupaten Sambas</a>
         </div>
     </div>
   
