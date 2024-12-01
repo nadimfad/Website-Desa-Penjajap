@@ -38,7 +38,7 @@ class InfographicController extends Controller
 
         ]);
 
-        Infographic::create($request->all);
+        Infographic::create($request->all());
 
         return redirect()->route('admin.infographics')->with('success', 'Data berhasil disimpan.');
     }
