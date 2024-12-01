@@ -269,7 +269,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-total-penduduk-Du2cCbAO.svg" alt="Belum Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Total Penduduk</h3>
-                        <div class="stat-value" style="color: #347928">13.135</div>
+                        <div class="stat-value" style="color: #347928">{{$infografis->population}}</div>
                     </div>
                 </div>
             </div>
@@ -278,7 +278,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kepala-keluarga-D4UfE36x.svg" alt="Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kepala Keluarga</h3>
-                        <div class="stat-value" style="color: #347928">3.803</div>
+                        <div class="stat-value" style="color: #347928">{{$infografis->households}}</div>
                     </div>
                 </div>
             </div>
@@ -289,7 +289,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-perempuan-BCmUG8mA.svg" alt="Belum Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Perempuan</h3>
-                        <div class="stat-value" style="color: #347928">6.388</div>
+                        <div class="stat-value" style="color: #347928">{{$infografis->female}}</div>
                     </div>
                 </div>
             </div>
@@ -298,7 +298,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-laki-CmERQRaD.svg" alt="Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Laki-laki</h3>
-                        <div class="stat-value" style="color: #347928">6.747</div>
+                        <div class="stat-value" style="color: #347928">{{$infografis->male}}</div>
                     </div>
                 </div>
             </div>
@@ -316,7 +316,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-belum-kawin-B6LGf_QT.svg" alt="Belum Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Belum Kawin</h3>
-                        <div class="stat-value" style="color: #347928;">606</div>
+                        <div class="stat-value" style="color: #347928;">{{$infografis->belum_kawin}}</div>
                     </div>
                 </div>
             </div>
@@ -325,7 +325,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kawin-DDA193Z5.svg" alt="Kawin" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kawin</h3>
-                        <div class="stat-value" style="color: #347928;">457</div>
+                        <div class="stat-value" style="color: #347928;">{{$infografis->kawin}}</div>
                     </div>
                 </div>
             </div>
@@ -334,7 +334,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-cerai-mati-VdEzxQgX.svg" alt="Cerai Mati" class="stat-icon">
                     <div class="stat-info">
                         <h3>Cerai Mati</h3>
-                        <div class="stat-value" style="color: #347928;">70</div>
+                        <div class="stat-value" style="color: #347928;">{{$infografis->cerai_mati}}</div>
                     </div>
                 </div>
             </div>
@@ -343,7 +343,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kawin-tercatat-Cr_1J14L.svg"alt="Kawin Tercatat" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kawin Tercatat</h3>
-                        <div class="stat-value" style="color: #347928;">0</div>
+                        <div class="stat-value" style="color: #347928;">{{$infografis->kawin_tercatat}}</div>
                     </div>
                 </div>
             </div>
@@ -352,7 +352,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kawin-tak-tercatat-Ba6jJHqw.svg" alt="Kawin Tidak Tercatat" class="stat-icon">
                     <div class="stat-info">
                         <h3>Kawin Tidak Tercatat</h3>
-                        <div class="stat-value" style="color: #347928;">0</div>
+                        <div class="stat-value" style="color: #347928;">{{$infografis->kawin_tidak_tercatat}}</div>
                     </div>
                 </div>
             </div>
@@ -361,7 +361,7 @@
                     <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-cerai-hidup-c75sVKpW.svg" alt="Cerai Hidup" class="stat-icon">
                     <div class="stat-info">
                         <h3>Cerai Hidup</h3>
-                        <div class="stat-value" style="color: #347928;">0</div>
+                        <div class="stat-value" style="color: #347928;">{{$infografis->cerai_hidup}}</div>
                     </div>
                 </div>
             </div>
@@ -376,7 +376,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-islam-B2-fwtBi.svg" alt="Islam" class="stat-icon">
             <div class="stat-info">
                 <h3>Islam</h3>
-                <div class="stat-value" style="color: #347928;">11.424</div>
+                <div class="stat-value" style="color: #347928;">{{$infografis->islam}}</div>
             </div>
         </div>
     </div>
@@ -387,7 +387,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-kristen-CvNUV1pq.svg" alt="Buddha" class="stat-icon">
             <div class="stat-info">
                 <h3>Kristen</h3>
-                <div class="stat-value" style="color: #347928;">148</div>
+                <div class="stat-value" style="color: #347928;">{{$infografis->kristen}}</div>
             </div>
         </div>
     </div>
@@ -398,7 +398,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-katolik-DFXj5yZv.svg" alt="Konghucu" class="stat-icon">
             <div class="stat-info">
                 <h3>Katolik</h3>
-                <div class="stat-value" style="color: #347928;">98</div>
+                <div class="stat-value" style="color: #347928;">{{$infografis->katolik}}</div>
             </div>
         </div>
     </div>
@@ -409,7 +409,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-hindu-D9LgBI6W.svg" alt="Kristen" class="stat-icon">
             <div class="stat-info">
                 <h3>Hindu</h3>
-                <div class="stat-value" style="color: #347928;">1.302</div>
+                <div class="stat-value" style="color: #347928;">{{$infografis->hindu}}</div>
             </div>
         </div>
     </div>
@@ -420,7 +420,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-buddha-Cfftt9vu.svg" alt="Katolik" class="stat-icon">
             <div class="stat-info">
                 <h3>Buddha</h3>
-                <div class="stat-value" style="color: #347928;">163</div>
+                <div class="stat-value" style="color: #347928;">{{$infografis->buddha}}</div>
             </div>
         </div>
     </div>
@@ -431,7 +431,7 @@
             <img src="https://cdn.digitaldesa.com/statics/profil-v2/assets/icon-konghuchu-Bt_R-Ivr.svg" alt="Hindu" class="stat-icon">
             <div class="stat-info">
                 <h3>Konghucu</h3>
-                <div class="stat-value" style="color: #347928;">0</div>
+                <div class="stat-value" style="color: #347928;">{{$infografis->konghucu}}</div>
               </div>
             </div>
         </div>
@@ -449,34 +449,12 @@
                     <div class="job-list">
                         <table class="table table-borderless" >
                             <tbody>
+                                @foreach($jobs as $job)
                                 <tr>
-                                    <td>Nelayan</td>
-                                    <td>723</td>
+                                    <td>{{$job->job_type}}</td>
+                                    <td>{{$job->total}}</td>
                                 </tr>
-                                <tr>
-                                    <td>Pedagang</td>
-                                    <td>448</td>
-                                </tr>
-                                <tr>
-                                    <td>Pegawai Negeri Sipil</td>
-                                    <td>382</td>
-                                </tr>
-                                <tr>
-                                    <td>Pengrajin Industri Kecil</td>
-                                    <td>356</td>
-                                </tr>
-                                <tr>
-                                    <td>Pertanian</td>
-                                    <td>181</td>
-                                </tr>
-                                <tr>
-                                    <td>Pengangkutan</td>
-                                    <td>93</td>
-                                </tr>
-                                <tr>
-                                    <td>Lain-lain</td>
-                                    <td>314</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -484,54 +462,16 @@
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 g-4 pekerjaan">
+        @foreach($jobs as $job)
         <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title">Nelayan</h4>
-                    <h2 class="display-4 text-center">723</h2>
+                    <h4 class="card-title">{{$job->job_type}}</h4>
+                    <h2 class="display-4 text-center">{{$job->total}}</h2>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h4 class="card-title">Pedagang</h4>
-                    <h2 class="display-4 text-center">448</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h4 class="card-title">Pegawai Negeri Sipil</h4>
-                    <h2 class="display-4 text-center">382</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h4 class="card-title">Pengrajin Industri Kecil</h4>
-                    <h2 class="display-4 text-center">356</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h4 class="card-title">Pertanian</h4>
-                    <h2 class="display-4 text-center">181</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h4 class="card-title">Pengangkutan</h4>
-                    <h2 class="display-4 text-center">93</h2>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
     </div>
   </div>
