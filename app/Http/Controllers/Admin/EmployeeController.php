@@ -13,16 +13,6 @@ use Illuminate\Support\Facades\Storage;
 class EmployeeController extends Controller
 {
     // Menampilkan halaman dashboard beserta data employee dan gallery
-    public function index()
-    {
-        // Ambil semua data dari database
-        $employees = Employee::all();
-        $galleries = Gallery::all();
-        $banners = Banner::all();
-        $sambutans = Sambutan::all();
-        return view('admin.dashboard', compact('employees', 'galleries', 'banners', 'sambutans'));
-    }
-
     // Menyimpan data employee baru
     public function storeEmployee(Request $request)
     {

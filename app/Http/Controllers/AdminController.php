@@ -4,16 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\Gallery;
+use App\Models\Sambutan;
+use  App\Models\Banner;
+
 
 class AdminController extends Controller
 {
     public function index()
     {
-        // Ambil semua data employees dari database
         $employees = Employee::all();
+        $galleries = Gallery::all();
+        $banners = Banner::all();
+        $sambutans = Sambutan::all();
+        return view('admin.dashboard', compact('employees', 'galleries', 'banners', 'sambutans'));
+        // Ambil semua data employees dari database
+        // $employees = Employee::all();
         
-        // Kirim data employees ke view admin.dashboard
-        return view('admin.dashboard', compact('employees'));
+        // // Kirim data employees ke view admin.dashboard
+        // return view('admin.dashboard', compact('employees'));
     }
 
     public function profile()
