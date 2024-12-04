@@ -467,7 +467,9 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <h4 class="card-title">{{$job->job_type}}</h4>
-                    <h2 class="display-4 text-center">{{$job->total}}</h2>
+                    <h2 class="display-4 text-center">{{$job->total
+                        
+                        }}</h2>
                 </div>
             </div>
         </div>
