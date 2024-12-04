@@ -4,6 +4,8 @@
 <!-- Form untuk tambah banner Desa -->
 <h1>Home | Banner Desa</h1>
 
+{{-- @dd(Auth::check()) --}}
+
 @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}

@@ -7,6 +7,7 @@ use App\Models\Sambutan;
 use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\InfografisDesaController;
 use App\Http\Controllers\PetaDesaController;
+use App\Http\Controllers\LoginController;
 
 Route::view( '/peta-desa', 'peta-desa');
 
@@ -23,22 +24,31 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/profil-desa', [ProfilDesaController::class, 'index']);
 Route::get('/infografis',[InfografisDesaController::class, 'index']);
 
+Route::middleware("guest")->group(function () {
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+});
+
+
 // Route untuk halaman admin utama (dashboard)
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
-Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
-Route::get('/admin/infographics', [AdminController::class, 'infographics'])->name('admin.infographics');
-Route::get('/admin/map', [AdminController::class, 'map'])->name('admin.map');
+Route::middleware('auth')->group(function(){
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('/admin/infographics', [AdminController::class, 'infographics'])->name('admin.infographics');
+    Route::get('/admin/map', [AdminController::class, 'map'])->name('admin.map'); 
+
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});
 
 //Route Dashboard Employee dan Gallery
 Route::prefix('admin')->name('admin.')->group(function () {
-    // Dashboard Routes
-    Route::get('/', [EmployeeController::class, 'index'])->name('dashboard');
+
 
     // Employee Routes
-    Route::post('/employee/store', [EmployeeController::class, 'storeEmployee'])->name('employee.store');
-    Route::get('/employee/edit/{employee}', [EmployeeController::class, 'editEmployee'])->name('employee.edit');
-    Route::put('/employee/update/{employee}', [EmployeeController::class, 'updateEmployee'])->name('employee.update');
-    Route::delete('/employee/destroy/{employee}', [EmployeeController::class, 'destroyEmployee'])->name('employee.destroy');
+    Route::post('/employee/store', [EmployeeController::class, 'storeEmployee'])->name('employee.store')->middleware('auth');
+    Route::get('/employee/edit/{employee}', [EmployeeController::class, 'editEmployee'])->name('employee.edit')->middleware('auth');
+    Route::put('/employee/update/{employee}', [EmployeeController::class, 'updateEmployee'])->name('employee.update')->middleware('auth');
+    Route::delete('/employee/destroy/{employee}', [EmployeeController::class, 'destroyEmployee'])->name('employee.destroy')->middleware('auth');
 
     // Gallery Routes
     Route::post('/gallery/store', [EmployeeController::class, 'storeGallery'])->name('galleries.store');
@@ -96,4 +106,3 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::put('infographics/jobs/{id}', [InfographicController::class, 'updateJob'])->name('infographics.updateJob');
     Route::delete('infographics/jobs/{id}', [InfographicController::class, 'destroyJob'])->name('infographics.destroyJob');
 });
-
