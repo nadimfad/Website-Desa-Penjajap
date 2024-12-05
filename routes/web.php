@@ -102,6 +102,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::put('infographics/{infographic}', [InfographicController::class, 'update'])->name('infographics.update');
 
     //Route job di Infographics
+    Route::get('infographics/jobs/{id}/edit', [InfographicController::class, 'editJob'])->name('infographics.editJob');
     Route::post('infographics/jobs', [InfographicController::class, 'storeJob'])->name('infographics.storeJob');
     Route::put('infographics/jobs/{id}', [InfographicController::class, 'updateJob'])->name('infographics.updateJob');
     Route::delete('infographics/jobs/{id}', [InfographicController::class, 'destroyJob'])->name('infographics.destroyJob');

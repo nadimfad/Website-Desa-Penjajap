@@ -81,6 +81,11 @@ class InfographicController extends Controller
         return redirect()->route('admin.infographics')->with('success', 'Job added successfully!');
     }
 
+    public function editJob($id){
+        $job = Job::findOrFail($id);
+        return view('admin.infographics.edit', compact('job'));
+    }
+
     public function updateJob(Request $request, $id)
     {
         $request->validate([

@@ -160,7 +160,7 @@
                     <td>{{ $job->total }}</td>
                     <td>
                         <!-- Tombol Edit -->
-                        <a href="{{ route('admin.infographics.updateJob', $job->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{{ route('admin.infographics.editJob', $job->id) }}" class="btn btn-warning btn-sm">Edit</a>
     
                         <!-- Tombol Hapus -->
                         <form action="{{ route('admin.infographics.destroyJob', $job->id) }}" method="POST" style="display: inline;">
