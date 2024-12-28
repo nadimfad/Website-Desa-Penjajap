@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\InfografisDesaController;
 use App\Http\Controllers\PetaDesaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+
 
 Route::view( '/peta-desa', 'peta-desa');
 
@@ -24,9 +26,15 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/profil-desa', [ProfilDesaController::class, 'index']);
 Route::get('/infografis',[InfografisDesaController::class, 'index']);
 
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register.form');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+
+
 Route::middleware("guest")->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
+    Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
 });
 
 
