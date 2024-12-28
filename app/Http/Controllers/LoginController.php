@@ -33,4 +33,18 @@ class LoginController extends Controller
 
         return redirect('/login');
     }
+    public function authenticate(Request $request)
+{
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+        // Jika login berhasil
+        return redirect()->intended('/dashboard');
+    }
+
+    // Jika gagal login
+    return back()->withErrors([
+        'login' => 'Email atau password salah.',
+    ])->withInput($request->only('email'));
+}
 }

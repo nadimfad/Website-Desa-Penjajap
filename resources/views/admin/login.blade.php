@@ -157,9 +157,13 @@
         </li>
       </ul>
     </div>
-
-    
 <main class="form-signin text-center">
+  @if ($errors->has('login'))
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{ $errors->first('login') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+@endif
   <form action="/login" method="POST">
     @csrf
     <img class="mb-4" style= "width:130; height:180;" src="{{ asset('image/logo sambas.png') }}" alt="" > 
@@ -181,8 +185,10 @@
       </label>
     </div>
     <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <p class="mt-3 mb-0">Belum punya Akun? 
+      <a href="/register" class="link-primary">Register</a>
+    </p>
   </form>
 </main>
-
-    </body>
+  </body>
 </html>
